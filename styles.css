@@ -10,7 +10,7 @@
 header {
   /* Position relative para que no se mueva de su lugar */
   position: relative;
-  background: url(/assets/imagenes/banner-background.png) no-repeat center center;
+  background: url(assets/imagenes/banner-background.png) no-repeat center center;
   background-size: cover;
   /* Border-bottom para que el borde se aplique solo abajo. */
   border-bottom: 1vh solid #690202;
@@ -204,7 +204,9 @@ a {
   height: auto;
   margin-top: 10px;
   align-self: center;
-  
+  border-radius: 5px;
+  border: 5px solid #690202fc;
+
 
 }
 
@@ -218,7 +220,8 @@ a {
 }
 
 footer {
-  display: block;
+  display: flex;
+  flex-direction: column;
   background-color: #690202fc;
   text-align: center;
   font-size: 25px;
@@ -229,9 +232,9 @@ footer {
 
 footer a {
   /* Espacio a los lados */
-  margin: 0 200px;
+  margin: 0 px;
   /* Alinear elementos sin usar flex. */
-  display: inline-block;
+  justify-content: space-around;
 }
 
 
@@ -273,6 +276,10 @@ footer a {
     margin-top: 0;
   }
 
+  footer {
+    flex-direction: row;
+    justify-content: space-around;
+  }
 
 }
 
@@ -408,7 +415,7 @@ footer a {
   justify-content: center;
   text-align: justify;
   margin: 1%;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
 }
 
 
@@ -561,10 +568,12 @@ td:hover {
 }
 
 .about-us {
-  padding: 3.5%; 
+  padding: 3.5%;
   text-align: justify;
   font-family: 'Caveat', cursive;
   background-color: #690202;
+  border-top: 5px solid #ffcc00;
+  border-bottom: 5px solid #ffcc00;
 
 }
 
@@ -576,7 +585,7 @@ td:hover {
 }
 
 .about-us p {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   line-height: 1.2;
   color: white;
   padding: 3.5%;
@@ -621,7 +630,7 @@ td:hover {
   .nota-periodistica img {
     margin: 2.5%;
     height: 30rem;
- 
+
 
 
   }
@@ -655,15 +664,15 @@ td:hover {
   .informacion iframe,
   .informacion table {
     margin: 0;
-    padding:0;
+    padding: 0;
     width: 90%;
     height: 40vh;
   }
 
   .about-us {
+
     padding: 5%;
-    border-top: 5px solid #ffcc00;
-    border-bottom: 5px solid #ffcc00;
+    
   }
 
   .about-us h2 {
