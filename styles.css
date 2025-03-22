@@ -1,0 +1,680 @@
+/* Reset de CSS básico */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+header {
+  /* Position relative para que no se mueva de su lugar */
+  position: relative;
+  background: url(/assets/imagenes/banner-background.png) no-repeat center center;
+  background-size: cover;
+  /* Border-bottom para que el borde se aplique solo abajo. */
+  border-bottom: 1vh solid #690202;
+  width: 100%;
+  height: 16vh;
+  padding-left: 2%;
+}
+
+.caja-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 15vh;
+}
+
+header a {
+  color: #690202fc;
+  text-decoration: none;
+}
+
+.home {
+  font-size: 6.5vh;
+  font-style: italic;
+  text-shadow: 0.3vh 0.3vh 0vh #ffffff;
+}
+
+/* CSS menú <nav> */
+nav {
+  z-index: 1;
+  align-self: flex-start;
+  font-size: 3.5vh;
+}
+
+nav summary {
+  font-weight: bold;
+  color: #690202fc;
+}
+
+/* :hover para cuando el mouse pasa por encima*/
+nav summary:hover {
+  color: #dfbe3b;
+  text-shadow: 0.3vh 0.3vh 0px #690202;
+}
+
+/* Para cuando el menu esta abierto */
+nav ul {
+  list-style: none;
+  font-size: 1.5rem;
+}
+
+nav details[open] ul {
+  /* Position absolute para que no desplace el resto de cosas al 
+  desplegar details */
+  position: absolute;
+  display: block;
+  background-color: white;
+  padding: 10px;
+  /* Bordes redondeados con border-radius */
+  border-radius: 5px;
+  box-shadow: 1px 4px 1px rgba(0, 0, 0, 0.2);
+}
+
+nav ul li {
+  padding: 6px 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #690202fc;
+  /* Para que la transicion no sea instantanea */
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #ffcc00;
+}
+
+
+
+@media (min-width: 1024px) {
+
+  .home {
+    font-size: 7.5vh;
+  }
+
+  /* Incorporar desplazamiento horizontal para desktop */
+
+
+}
+
+.catalogo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 95%;
+  margin: 1% 2.5%;
+  gap: 5px;
+  /* Agrega separación entre elementos */
+  box-sizing: border-box;
+}
+
+.catalogo a {
+  flex: 1 1 calc(50% - 5px);
+  /* Cada enlace ocupa el 50% menos el gap */
+  max-width: 50%;
+  display: flex;
+  /* Asegurar que los enlaces <a sean como cajas */
+  justify-content: center;
+  /* Centra la imagen dentro del <a> */
+}
+
+.catalogo img {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+@media (min-width: 1024px) {
+  .catalogo a {
+    flex: 1 1 calc(25% - 5px);
+    /* dividimpos en 4, y si se agranda la pantalla se dobla con flex-wrap */
+    max-width: 25%;
+  }
+}
+
+body {
+  /* Fuente de Google fonts para todo el sitio */
+  font-family: 'Oswald', sans-serif;
+  /* Fondo en degrade para todo el sitio */
+  /* Tratar de aplicar imagen en movimiento al fondo */
+  background: linear-gradient(to left, #fdfdfc, #8a8a86);
+  min-height: 100vh;
+}
+
+body h2 {
+  font-size: 2rem;
+  text-shadow: 4px 4px 6px #690202;
+  margin-left: 2.5%;
+  padding-top: 2vh;
+}
+
+
+h3 {
+  font-size: 1.8rem;
+  margin-left: 2.5%;
+  margin-top: 4.5vh;
+}
+
+iframe {
+  /* No olvidar sacar los atributos en linea de los iframe, por ejemplo el border */
+  border: 3px solid #690202;
+  border-radius: 10px;
+  margin-left: 2.5%;
+  height: 40vh;
+  width: 95%;
+  margin-top: 5%;
+}
+
+.caja-index {
+  display: flex;
+  flex-direction: column;
+}
+
+
+body p {
+  font-size: 1.2rem;
+}
+
+a {
+  text-decoration: none;
+  /* Color heredado si no se especifica */
+  color: inherit;
+}
+
+.noticia {
+  display: flex;
+  flex-direction: column;
+  /* Alternativa etiqueta <hr> */
+  border-top: 2px solid #690202;
+  border-bottom: 2px solid #690202;
+  padding: 5px;
+  margin: 0 2.5%;
+  width: 95%;
+
+}
+
+/* Todas las imagenes dentro de la clase noticia */
+.noticia img {
+  width: 70vw;
+  /* Height auto para que no se deforme la imagen */
+  height: auto;
+  margin-top: 10px;
+  align-self: center;
+  
+
+}
+
+.contenido-noticia h3 {
+  font-size: 1.5rem;
+  margin: 2%;
+}
+
+.contenido-noticia p {
+  font-size: 1.3rem;
+}
+
+footer {
+  display: block;
+  background-color: #690202fc;
+  text-align: center;
+  font-size: 25px;
+  color: white;
+  padding: 10px;
+
+}
+
+footer a {
+  /* Espacio a los lados */
+  margin: 0 200px;
+  /* Alinear elementos sin usar flex. */
+  display: inline-block;
+}
+
+
+
+@media (min-width: 1024px) {
+  body h2 {
+    font-size: 3.5rem;
+  }
+
+  h3 {
+    font-size: 3rem;
+    margin-left: 2.5%;
+    margin-top: 4.5vh;
+  }
+
+  iframe {
+    width: 80%;
+    height: 60vh;
+  }
+
+  .caja-index {
+    flex-direction: row;
+
+  }
+
+  .pagina-principal {
+    flex: 1;
+  }
+
+  .noticia {
+    flex-direction: row;
+    padding: 2%;
+  }
+
+  .noticia img {
+    width: 30%;
+    height: auto;
+    margin-right: 20px;
+    margin-top: 0;
+  }
+
+
+}
+
+.formulario {
+  display: flex;
+  /* flex-direction para acomodarlo en columna*/
+  flex-direction: column;
+  max-width: 80%;
+  /* Manera momentanea de acomodarlo. Cada valor es una dirección, Arriba, derecha, abajo e izquierda */
+  margin: 0 10%;
+  /* atributo gap para separar los distintos label/input  */
+  gap: 10px;
+}
+
+.formulario label {
+  font-size: 1.5rem;
+}
+
+/* Manera de agrupar elementos en comun, separando con "," */
+.formulario input,
+.formulario select,
+.formulario textarea {
+  /* este width es del 100% de la clase "formulario" */
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  /* Bordes redondeados */
+  border-radius: 5px;
+}
+
+.opciones {
+  display: flex;
+  gap: 10px;
+}
+
+.formulario input[type="submit"] {
+  background-color: #690202;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 5px;
+  /* para alejarlo del footer */
+  margin-bottom: 7vh;
+}
+
+/* cambiar de color (mas oscuro al pasar el mouse */
+
+.formulario input[type="submit"]:hover {
+  background-color: #4d0404fc;
+}
+
+@media (min-width: 1024px) {
+  .formulario {
+    max-width: 30%;
+  }
+}
+
+
+
+.preview {
+  /* Esto es lo que contiene cada link */
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  margin: 0 2.5%;
+  border-top: 1px solid #690202;
+  border-bottom: 2px solid #690202;
+  padding: 15px 0;
+}
+
+
+.preview-caja {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2vh;
+  text-align: center;
+}
+
+.preview-imagen {
+  width: auto;
+  height: auto;
+  align-items: center;
+  /* para que no se pegue al texto */
+  margin-bottom: 2%;
+  border: 2px solid black;
+  border-radius: 5px;
+  max-height: 25vh;
+}
+
+.preview-texto {
+  /* Solución para que el texto ocupe toda la caja */
+  flex: 1;
+}
+
+.preview-titulo {
+  margin: 0;
+  font-size: 1.7rem;
+  color: black;
+}
+
+.preview-descripcion {
+  font-size: 1.4rem;
+  /* Ajustar color */
+  color: rgb(87, 86, 86);
+}
+
+.nota-periodistica {
+  display: flex;
+  flex-direction: column;
+  margin: 2.5%;
+  width: 95%;
+}
+
+.nota-periodistica img {
+  flex: 1;
+
+  border-radius: 10px;
+  border: 2px solid black;
+  width: 100%;
+  height: auto;
+
+}
+
+.nota-periodistica p {
+  flex: 1;
+  /* Usar display flex aunque la clase nota-periodistica tenga display flex para que funcione en sus elementos "hijos" */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: justify;
+  margin: 1%;
+  font-size: 1.4rem;
+}
+
+
+/* Similar a la clase preview pero un poco mas compleja. */
+.producto {
+  display: flex;
+  flex-direction: column;
+  margin: 2.5%;
+  text-align: center;
+}
+
+
+
+.producto-logo {
+  width: 100%;
+  border: 20px solid #690202;
+  background-color: #690202;
+  border-radius: 10px;
+
+
+
+}
+
+.producto h2 {
+  color: white;
+  padding: 5px;
+  background-color: #690202;
+  margin: 0;
+  padding-left: 20px;
+  border-radius: 10px;
+
+}
+
+.producto p {
+  background-color: #ffcc00;
+  padding: 10px;
+  border-radius: 10px;
+  width: 100%;
+  height: auto;
+  border: 5px solid #ffcc00;
+  text-align: center;
+  display: flex;
+}
+
+.producto-logo img {
+  max-width: 80%;
+  margin: 0 10%;
+
+
+}
+
+.producto-logo label {
+  font-size: 30px;
+  padding: 5px;
+  color: white;
+}
+
+
+.informacion {
+  display: flex;
+  padding: 10px;
+  margin: 2.5%;
+  border-top: 10px double #690202;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.informacion img {
+  width: 25%;
+  height: auto;
+  border: 5px solid #690202;
+}
+
+.menu {
+  display: flex;
+
+}
+
+.menu ul {
+  width: 40%;
+}
+
+.menu img {
+  width: 60%;
+}
+
+
+
+/* Si se agregan direcciones quedarian del mismo tamaño que "adress a" */
+address {
+  display: flex;
+  font-size: 1.5rem;
+  padding-bottom: 1.5%;
+}
+
+address a {
+  font-size: 1.5rem;
+  text-decoration: none;
+  margin: 20px;
+}
+
+
+
+.menu {
+  display: grid;
+  grid-template-columns: 1fr;
+  /* Una columna en mobile */
+  gap: 15px;
+  /* Espaciado entre elementos */
+  justify-items: center;
+  /* Centrar elementos en el grid */
+
+
+}
+
+table {
+  width: 100%;
+  /* Ocupa todo el ancho en mobile */
+  max-width: 300px;
+  /* Evita que sea demasiado grande */
+  border-collapse: collapse;
+  margin: auto;
+}
+
+th,
+td {
+  border: 2px solid #690202;
+  padding: 5px;
+  text-align: center;
+}
+
+th {
+  background-color: #690202fc;
+  font-size: 1.3rem;
+  color: white;
+}
+
+td {
+  font-size: 28px;
+  background-color: #ffcc00;
+  transition: transform 0.3s ease-in-out, background-color 0.3s;
+}
+
+td:hover {
+  transform: scale(1.1);
+  /* Aumenta el tamaño */
+  background-color: #ffdd44;
+  /* Color más claro */
+}
+
+.about-us {
+  padding: 3.5%; 
+  text-align: justify;
+  font-family: 'Caveat', cursive;
+  background-color: #690202;
+
+}
+
+.about-us h2 {
+  font-size: 3.5em;
+  color: white;
+  text-shadow: 3px -3px 6px black;
+  margin-bottom: 50px;
+}
+
+.about-us p {
+  font-size: 1.8rem;
+  line-height: 1.2;
+  color: white;
+  padding: 3.5%;
+}
+
+
+
+@media (min-width: 1024px) {
+  .preview {
+    display: flex;
+
+  }
+
+  .preview-caja {
+    flex-direction: row;
+  }
+
+  .preview-imagen {
+    width: auto;
+    margin: 0 2.5%;
+    height: 18vh;
+  }
+
+  .nota-periodistica {
+    flex-direction: row;
+    flex-wrap: wrap;
+    display: block;
+    justify-content: center;
+  }
+
+  .nota-periodistica div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+  }
+
+  .nota-periodistica p {
+    font-size: 1.9rem;
+
+  }
+
+  .nota-periodistica img {
+    margin: 2.5%;
+    height: 30rem;
+ 
+
+
+  }
+
+  .producto {
+    flex-direction: row
+  }
+
+  .producto-logo {
+    width: 100%;
+    padding: 0;
+  }
+
+  .producto-logo img {
+    margin-top: 5%;
+    max-height: 35vh;
+
+  }
+
+  .producto p {
+    font-size: 1.8rem;
+  }
+
+  .informacion {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    margin: 0;
+  }
+
+  .informacion iframe,
+  .informacion table {
+    margin: 0;
+    padding:0;
+    width: 90%;
+    height: 40vh;
+  }
+
+  .about-us {
+    padding: 5%;
+    border-top: 5px solid #ffcc00;
+    border-bottom: 5px solid #ffcc00;
+  }
+
+  .about-us h2 {
+    font-size: 6rem;
+    margin-top: 0%;
+    text-decoration: none;
+  }
+
+  .about-us p {
+    font-size: 2.8rem;
+    text-align: center;
+  }
+
+}

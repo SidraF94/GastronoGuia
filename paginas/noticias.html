@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+
+    <title>Gastronoguia | Noticias</title>
+</head>
+<body>
+
+    <header>
+        <!-- Insertar logo aca -->
+        <div class="caja-header">
+            <h1 class="home"><a href="../index.html">GastronoGuia</a></h1>
+            <nav>
+                <!-- Menu de todas las paginas -->
+                <details>
+                    <summary>Menú</summary>
+                    <ul>
+                        <li><a href="../index.html">Inicio</a></li>
+                        <li><a href="noticias.html">Noticias</a></li>
+                        <li><a href="restaurantes.html">Lista de Restaurantes</a></li>
+                        <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </details>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <article>
+                <!-- Uso de div y clases para poder acomodar los objetos. Preview de la noticia con una imagen a un costado, con un titulo y una breve descripción.
+                 Todo el contenedor es un enlace a la noticia -->
+                <a href="noticias/noticia-pizza.html" class="preview">
+                    <div class="preview-caja">
+                        <img src="../assets/imagenes/pizza-peperoni.png" alt="pizza" class="preview-imagen">
+                        <div class="preview-texto">
+                            <h3 class="preview-titulo">Paso a paso: cómo hacer una pizza casera con el auténtico sabor de pizzería</h3>
+                            <p class="preview-descripcion">Explicaremos técnicas, ingredientes y secretos para lograr una pizza perfecta en casa, desde la masa hasta la cocción...</p>
+                        </div>
+                    </div>
+                </a>
+            </article>
+            
+            <article>
+                <a href="noticias/noticia-hamburguesa.html" class="preview">
+                    <div class="preview-caja">
+                        <img src="../assets/imagenes/hamburguesa.png" alt="hamburguesa" class="preview-imagen">
+                        <div class="preview-texto">
+                            <h3 class="preview-titulo">El ingrediente clave para transformar una hamburguesa casera en una experiencia gourmet</h3>
+                            <p class="preview-descripcion">Exploraremos cómo un solo ingrediente puede elevar el sabor y la textura de una hamburguesa hecha en casa.</p>
+                        </div>
+                    </div>
+                </a>
+            </article>
+    
+            <article>
+                <a href="/paginas/noticias/noticia-pizza.html" class="preview">
+                    <div class="preview-caja">
+                        <img src="/assets/imagenes/pizza-peperoni.png" alt="pizza" class="preview-imagen">
+                        <div class="preview-texto">
+                            <h3 class="preview-titulo">Paso a paso: cómo hacer una pizza casera con el auténtico sabor de pizzería</h3>
+                            <p class="preview-descripcion">Explicaremos técnicas, ingredientes y secretos para lograr una pizza perfecta en casa, desde la masa hasta la cocción...</p>
+                        </div>
+                    </div>
+                </a>
+            </article>
+    
+            <article>
+                <a href="/paginas/noticias/noticia-hamburguesa.html" class="preview">
+                    <div class="preview-caja">
+                        <img src="/assets/imagenes/hamburguesa.png" alt="hamburguesa" class="preview-imagen">
+                        <div class="preview-texto">
+                            <h3 class="preview-titulo">El ingrediente clave para transformar una hamburguesa casera en una experiencia gourmet</h3>
+                            <p class="preview-descripcion">Exploraremos cómo un solo ingrediente puede elevar el sabor y la textura de una hamburguesa hecha en casa.</p>
+                        </div>
+                    </div>
+                </a>
+            </article>
+    
+        </section>
+    </main>
+    
+
+    <footer>
+        <a href="./contacto.html">Contacto</a>
+        <span>Todos los derechos reservados.</span>
+    </footer>
+        
+</body>
+</html>

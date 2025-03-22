@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+
+    <title>Contacto</title>
+</head>
+
+<body>
+
+    <header>
+        <!-- Insertar logo aca -->
+        <div class="caja-header">
+            <h1 class="home"><a href="../index.html">GastronoGuia</a></h1>
+            <nav>
+                <!-- Menu de todas las paginas -->
+                <details>
+                    <summary>Menú</summary>
+                    <ul>
+                        <li><a href="../index.html">Inicio</a></li>
+                        <li><a href="noticias.html">Noticias</a></li>
+                        <li><a href="restaurantes.html">Lista de Restaurantes</a></li>
+                        <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </details>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h2>Contáctenos</h2>
+        <!-- Etiqueta semantica "form" -->
+        <form class="formulario">
+            <label for="nombre">Nombres y apellidos</label>
+            <input type="text" name="nombre" id="nombre">
+            <!-- input del tipo numerico -->
+            <label for="telefono">Teléfono</label>
+            <input type="number" name="telefono" id="telefono">
+            <!-- input del tipo email -->
+            <label for="email">E-mail</label>
+            <input type="email" name="email" id="email">
+
+
+            <label for="preferencia">Preferencia de contacto</label>
+            <div class="opciones">
+                <label>
+                    <!-- Input del tipo radio -->
+                    <input type="radio" name="preferencia" value="telefono">Teléfono
+                </label>
+                <label>
+                    <input type="radio" name="preferencia" value="email">E-mail
+                </label>
+            </div>
+
+            <!--  -->
+            <label for="tipodeusuario">Me comunico en calidad de</label>
+            <select name="tipodeusuario" id="tipodeusuario">
+                <option value="usuario">Usuario</option>
+                <option value="dueño">Dueño de establecimiento</option>
+                <option value="empleado">Empleado</option>
+            </select>
+
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="6" cols="40"></textarea>
+
+
+            <!-- Boton enviar, aplicar estilo con CSS -->
+            <input type="submit" value="Enviar">
+        </form>
+    </main>
+
+    <footer>
+        <a href="./contacto.html">Contacto</a>
+        <span>Todos los derechos reservados.</span> 
+    </footer>
+
+</body>
+
+</html>
