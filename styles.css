@@ -14,13 +14,20 @@ header {
   background: url(assets/imagenes/banner-background.png) no-repeat;
   background-position: center;
   background-size: cover;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  
 }
 
 .navbar h1 {
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   color: #690202;
   text-shadow: white -3px 3px 1px;
+}
 
+.navbar-brand img { 
+  height: 5rem;
 }
 
 
@@ -50,9 +57,24 @@ header {
 
 
 @media (min-width: 1024px) {
-  .navbar h1 {
-    font-size: 4.5rem;
+  
+  .logo-desktop {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
   }
+
+  .navbar h1 {
+    font-size: 6rem;
+    line-height: 80px;
+  }
+
+  .navbar-brand img {
+    height: 30vh;
+    transform: translateY(3vh); /* Ajusta el valor según lo que necesites */
+  }
+
+  
 
   .navbar-nav .nav-link {
     font-size: 2rem;
@@ -60,37 +82,38 @@ header {
 }
 
 .catalogo {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 columnas en mobile */
+  gap: 5px; /* Espacio entre elementos */
   width: 95%;
-  margin: 1% 2.5%;
-  gap: 5px;
-  /* Agrega separación entre elementos */
+  margin: 1% auto;
   box-sizing: border-box;
 }
 
 .catalogo a {
-  flex: 1 1 calc(50% - 5px);
-  /* Cada enlace ocupa el 50% menos el gap */
-  max-width: 50%;
   display: flex;
-  /* Asegurar que los enlaces <a sean como cajas */
   justify-content: center;
-  /* Centra la imagen dentro del <a> */
+  align-items: center;
+  height: 15vh; /* Altura fija para mantener uniformidad */
+  overflow: hidden; /* Evita desbordes de imágenes grandes */
 }
 
 .catalogo img {
   width: 100%;
+  height: 100%;
+  object-fit: cover; /* Recorta imágenes manteniendo la proporción */
   border-radius: 10px;
   border: 1px solid black;
 }
 
-@media (min-width: 1024px) {
+
+@media (min-width: 1024px) { /* Ajusta el tamaño según lo necesites */
+  .catalogo {
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas en pantallas grandes */
+  }
+
   .catalogo a {
-    flex: 1 1 calc(25% - 5px);
-    /* dividimpos en 4, y si se agranda la pantalla se dobla con flex-wrap */
-    max-width: 25%;
+    height: 250px; /* Aumenta la altura para pantallas más grandes */
   }
 }
 
@@ -106,14 +129,15 @@ body {
 }
 
 body h2 {
-  font-size: 2rem;
-  text-shadow: 4px 4px 6px #690202;
+  font-size: 1.8rem;
+ color: white;
   margin-left: 2.5%;
   padding-top: 2vh;
 }
 
 
 h3 {
+  color: white;
   font-size: 1.8rem;
   margin-left: 2.5%;
   margin-top: 4.5vh;
@@ -176,6 +200,7 @@ a {
 }
 
 .contenido-noticia p {
+  color: antiquewhite;
   font-size: 1.3rem;
 }
 
@@ -207,16 +232,18 @@ footer a {
   h3 {
     font-size: 3rem;
     margin-left: 2.5%;
-    margin-top: 4.5vh;
+    margin-top: 2.5vh;
   }
 
   iframe {
     width: 80%;
-    height: 60vh;
+    height: 40vh;
   }
 
   .caja-index {
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 2.5%;
 
   }
 

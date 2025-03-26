@@ -27,40 +27,45 @@
     <header>
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container-fluid d-flex flex-column justify-content-end">
-                <!-- LOGO Y NOMBRE -->
-                <a class="navbar-brand" href="#">
-                    <img class="m-0 p-0" style="height: 8.5rem;" src="assets/imagenes/logo-gastronoguia.png" alt="">
-                </a>
-                <h1 class="mb-0">GastronoGuia</h1>
-
-                <!-- BOTÓN HAMBURGUESA -->
-                <button class="navbar-toggler position-absolute top-0 end-0 ms-auto" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <!-- MENÚ COLAPSABLE -->
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="paginas/noticias.html">Noticias</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="paginas/restaurantes.html">Lista de Restaurantes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="paginas/sobre-nosotros.html">Sobre nosotros</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="paginas/contacto.html">Contacto</a>
-                        </li>
-                    </ul>
+            <!-- "logo-desktop = clase propia" -->
+            <div logo-desktop>
+                <div class="container-fluid d-flex justify-content-start align-items-end ">
+                    <!-- logo + nombre -->
+                    <a class="navbar-brand" href="#">
+                        <img class="top-0 start-50" src="assets/imagenes/logo-gastronoguia.png" alt="">
+                    </a>
+                    <h1>GastronoGuia</h1>
                 </div>
+            </div>
+
+            
+            <!-- Incorporamos con bootstrap "Hamburguesa responsive" para pantallas pequeñas. -->
+            <button class="navbar-toggler position-absolute top-0 end-0 ms-auto" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Menu responsive modelo Bootstrap. -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="paginas/noticias.html">Noticias</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="paginas/restaurantes.html">Lista de Restaurantes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="paginas/sobre-nosotros.html">Sobre nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="paginas/contacto.html">Contacto</a>
+                    </li>
+                </ul>
+            </div>
             </div>
         </nav>
 
@@ -114,7 +119,7 @@
             <article>
                 <div>
                     <h3>Noticias</h3>
-                    <a href="paginas/noticias.html" style=" margin-left: 2.5%; color: #007BFF; font-size: 24px;">Ver
+                    <a href="paginas/noticias.html" style=" margin-left: 2.5%; color: gray; font-size: 24px;">Ver
                         más
                         noticias</a>
                 </div>
