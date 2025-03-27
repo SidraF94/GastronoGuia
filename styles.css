@@ -8,16 +8,15 @@
 
 header {
   border-bottom: 1vh solid #690202;
-}
-
-.navbar {
   background: url(assets/imagenes/banner-background.png) no-repeat;
   background-position: center;
   background-size: cover;
+}
+
+.navbar {
   display: flex;
   flex-wrap: wrap;
   align-items: end;
-  
 }
 
 .navbar h1 {
@@ -26,8 +25,18 @@ header {
   text-shadow: white -3px 3px 1px;
 }
 
-.navbar-brand img { 
+.navbar-brand img {
   height: 5rem;
+  /* Brillo normal */
+  filter: brightness(100%); 
+  /* Suaviza la transición */
+  transition: filter 0.3s ease-in-out; 
+}
+
+
+.navbar-brand img:hover {
+  /* Aumenta el brillo al pasar el mouse */
+  filter: brightness(150%); 
 }
 
 
@@ -37,27 +46,36 @@ header {
   background-color: #690202;
 }
 
-.navbar-nav .nav-link {
+.navbar-nav a {
   color: #690202;
   font-size: 1.2rem;
+  /* Negrita con font-weight */
   font-weight: bold;
+  /* Espacio a los costados */
   padding: 0vh 4vw;
   text-align: center;
   margin: 0 10px;
   background-color: rgba(255, 255, 255, 0.514);
-  border-radius: 10px; /* Bordes redondeados */
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Transiciones suaves */
+   /* Bordes redondeados */
+  border-radius: 10px;
+  /* Transiciones suaves */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+
 }
 
-.navbar-nav .nav-link:hover {
-  background-color: rgba(255, 255, 255, 0.603); /* Aumenta la opacidad al pasar el mouse */
-  transform: scale(1.05); /* Ligeramente más grande */
+.navbar-nav a:hover {
+  /* Aumenta la opacidad al pasar el mouse */
+  background-color: rgba(255, 255, 255, 0.603);
+  /* Ligeramente más grande */
+  transform: scale(1.05);
+  color: #690202;
 }
 
 
 
 @media (min-width: 1024px) {
-  
+
+  /* Clase creada especificamente para pantallas grandes. */
   .logo-desktop {
     display: flex;
     flex-direction: column;
@@ -71,51 +89,65 @@ header {
 
   .navbar-brand img {
     height: 30vh;
-    transform: translateY(3vh); /* Ajusta el valor según lo que necesites */
+    /* transform translate x o y para moverlo ligeramente por cuestiones esteticas sin tocar la imagen.
+    Averiguar si existe otra forma */
+    transform: translateY(3vh);
+
   }
 
-  
 
-  .navbar-nav .nav-link {
+  .navbar-nav a{
     font-size: 2rem;
   }
 }
 
+/* Cambiamos flexbox por grid con responsive entre mobile y desktop */
 .catalogo {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* 2 columnas en mobile */
-  gap: 5px; /* Espacio entre elementos */
+  grid-template-columns: 1fr 1fr;
+  /* 2 columnas en mobile */
+  gap: 5px;
+  /* Espacio entre elementos */
   width: 95%;
   margin: 1% auto;
   box-sizing: border-box;
 }
 
 .catalogo a {
+/* Atributos necesarios para que las cajas de las imagenes se vean iguales. Acompañar con cover en las imagenes. */
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 15vh; /* Altura fija para mantener uniformidad */
-  overflow: hidden; /* Evita desbordes de imágenes grandes */
+  height: 15vh;
+  /* Altura fija para mantener uniformidad */
+  overflow: hidden;
+  /* Evita desbordes de imágenes grandes */
 }
 
 .catalogo img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Recorta imágenes manteniendo la proporción */
+  object-fit: cover;
+  /* Recorta imágenes manteniendo la proporción */
   border-radius: 10px;
-  border: 1px solid black;
+  border: 1px solid #690202;
 }
 
 
-@media (min-width: 1024px) { /* Ajusta el tamaño según lo necesites */
+@media (min-width: 1024px) {
+
   .catalogo {
-    grid-template-columns: repeat(4, 1fr); /* 4 columnas en pantallas grandes */
+    grid-template-columns: repeat(4, 1fr);
+    /* 4 columnas en pantallas grandes */
   }
 
   .catalogo a {
-    height: 250px; /* Aumenta la altura para pantallas más grandes */
+    height: 250px;
+    /* Aumenta la altura para pantallas más grandes */
   }
 }
+
+
 
 body {
   /* Fuente de Google fonts para todo el sitio */
@@ -130,7 +162,7 @@ body {
 
 body h2 {
   font-size: 1.8rem;
- color: white;
+  color: white;
   margin-left: 2.5%;
   padding-top: 2vh;
 }
@@ -153,6 +185,7 @@ iframe {
   margin-top: 5%;
 }
 
+/* .caja-index Utiliza flexbox para mobile y Grid para Desktop. */
 .caja-index {
   display: flex;
   flex-direction: column;
@@ -161,6 +194,7 @@ iframe {
 
 body p {
   font-size: 1.2rem;
+  color: white;
 }
 
 a {
@@ -211,7 +245,7 @@ footer {
   text-align: center;
   font-size: 25px;
   color: white;
-  padding: 10px;
+  padding: 5px;
 
 }
 
@@ -271,6 +305,7 @@ footer a {
 }
 
 .formulario {
+  color: white;
   display: flex;
   /* flex-direction para acomodarlo en columna*/
   flex-direction: column;
@@ -290,16 +325,11 @@ footer a {
 .formulario select,
 .formulario textarea {
   /* este width es del 100% de la clase "formulario" */
-  width: 100%;
+  margin: 5px;
   padding: 8px;
   border: 1px solid #ccc;
   /* Bordes redondeados */
   border-radius: 5px;
-}
-
-.opciones {
-  display: flex;
-  gap: 10px;
 }
 
 .formulario input[type="submit"] {
@@ -321,7 +351,7 @@ footer a {
 
 @media (min-width: 1024px) {
   .formulario {
-    max-width: 30%;
+    max-width: 20%;
   }
 }
 
@@ -368,13 +398,13 @@ footer a {
 .preview-titulo {
   margin: 0;
   font-size: 1.7rem;
-  color: black;
+  color: white
 }
 
 .preview-descripcion {
   font-size: 1.4rem;
   /* Ajustar color */
-  color: rgb(87, 86, 86);
+  color: antiquewhite
 }
 
 .nota-periodistica {
@@ -558,7 +588,6 @@ td:hover {
   padding: 3.5%;
   text-align: justify;
   font-family: 'Caveat', cursive;
-  background-color: #690202;
   border-top: 5px solid #ffcc00;
   border-bottom: 5px solid #ffcc00;
 
@@ -567,8 +596,7 @@ td:hover {
 .about-us h2 {
   font-size: 3.5em;
   color: white;
-  text-shadow: 3px -3px 6px black;
-  margin-bottom: 50px;
+
 }
 
 .about-us p {
