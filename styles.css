@@ -13,6 +13,10 @@ header {
   background-size: cover;
 }
 
+header nav {
+  margin-left: 2%;
+}
+
 .navbar {
   display: flex;
   flex-wrap: wrap;
@@ -48,11 +52,12 @@ header {
 
 .navbar-nav a {
   color: #690202;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   /* Negrita con font-weight */
   font-weight: bold;
   /* Espacio a los costados */
   padding: 0vh 4vw;
+
   text-align: center;
   margin: 0 10px;
   background-color: rgba(255, 255, 255, 0.514);
@@ -88,10 +93,10 @@ header {
   }
 
   .navbar-brand img {
-    height: 30vh;
+    height: 20vh;
     /* transform translate x o y para moverlo ligeramente por cuestiones esteticas sin tocar la imagen.
     Averiguar si existe otra forma */
-    transform: translateY(3vh);
+    transform: translateY(1vh);
 
   }
 
@@ -179,10 +184,10 @@ iframe {
   /* No olvidar sacar los atributos en linea de los iframe, por ejemplo el border */
   border: 3px solid #690202;
   border-radius: 10px;
-  margin-left: 2.5%;
-  height: 40vh;
+  height: 30vh;
   width: 95%;
-  margin-top: 5%;
+  margin: 2.5%;
+
 }
 
 /* .caja-index Utiliza flexbox para mobile y Grid para Desktop. */
@@ -270,8 +275,9 @@ footer a {
   }
 
   iframe {
-    width: 80%;
+    width: 95%;
     height: 40vh;
+    margin: 0;
   }
 
   .caja-index {
@@ -380,19 +386,20 @@ footer a {
 }
 
 .preview-imagen {
-  width: auto;
-  height: auto;
+  flex: 1;
+  object-fit: cover;
   align-items: center;
   /* para que no se pegue al texto */
   margin-bottom: 2%;
   border: 2px solid black;
   border-radius: 5px;
+  height: 1vh;
   max-height: 25vh;
 }
 
 .preview-texto {
   /* Solución para que el texto ocupe toda la caja */
-  flex: 1;
+  flex: 5;
 }
 
 .preview-titulo {
@@ -447,13 +454,22 @@ footer a {
 
 
 .producto-logo {
+  flex: 1;
   width: 100%;
   border: 20px solid #690202;
   background-color: #690202;
   border-radius: 10px;
+}
 
+.logo {
+  height: 20vh;
+  object-fit: cover;
+  width: 90%;
 
+}
 
+.producto-descripcion {
+  flex: 4;
 }
 
 .producto h2 {
@@ -462,14 +478,17 @@ footer a {
   background-color: #690202;
   margin: 0;
   padding-left: 20px;
-  border-radius: 10px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
 
 }
 
 .producto p {
+  color: #690202;
   background-color: #ffcc00;
   padding: 10px;
-  border-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
   width: 100%;
   height: auto;
   border: 5px solid #ffcc00;
@@ -484,27 +503,22 @@ footer a {
 
 }
 
-.producto-logo label {
-  font-size: 30px;
-  padding: 5px;
-  color: white;
-}
-
 
 .informacion {
-  display: flex;
-  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: space-around;
   margin: 2.5%;
   border-top: 10px double #690202;
-  display: flex;
-  flex-direction: column;
 
 }
 
 .informacion img {
   width: 25%;
-  height: auto;
+  max-height: 30vh;
+  object-fit: cover;
   border: 5px solid #690202;
+  
 }
 
 .menu {
@@ -521,20 +535,20 @@ footer a {
 }
 
 
-
-/* Si se agregan direcciones quedarian del mismo tamaño que "adress a" */
 address {
   display: flex;
-  font-size: 1.5rem;
-  padding-bottom: 1.5%;
+  justify-content: space-around;
+  padding-top: 5%;
+
 }
 
-address a {
-  font-size: 1.5rem;
-  text-decoration: none;
-  margin: 20px;
-}
 
+address a img {
+  height: 8vh;
+  /* Con filter: invert cambiamos los iconos negros por blancos con el valor 1*/
+  filter: invert(1);
+
+}
 
 
 .menu {
@@ -646,8 +660,6 @@ td:hover {
     margin: 2.5%;
     height: 30rem;
 
-
-
   }
 
   .producto {
@@ -657,32 +669,45 @@ td:hover {
   .producto-logo {
     width: 100%;
     padding: 0;
+    border-top-right-radius: 0px;
+  }
+
+  .producto h2 {
+    border-top-left-radius: 0px;
   }
 
   .producto-logo img {
-    margin-top: 5%;
+    margin-top: 2.5%;
     max-height: 35vh;
 
   }
 
   .producto p {
     font-size: 1.8rem;
+    border-bottom-left-radius: 0px;
   }
 
   .informacion {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1.2fr 1fr 1fr;
     justify-items: center;
-    margin: 0;
+    
+    
   }
 
+  .informacion img{
+    margin: 0 2.5%;
+    width: 95%;
+  }
+
+
+  .informacion img,
   .informacion iframe,
   .informacion table {
-    margin: 0;
-    padding: 0;
-    width: 90%;
-    height: 40vh;
+    max-height: 40vh;
+
   }
+
 
   .about-us {
 
