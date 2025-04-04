@@ -8,6 +8,7 @@
 
 header {
   border-bottom: 1vh solid #690202;
+  /* Banner del <header> distinto del <body>, imagen centrada */
   background: url(assets/imagenes/banner-background.png) no-repeat;
   background-position: center;
   background-size: cover;
@@ -18,6 +19,7 @@ header nav {
 }
 
 .navbar {
+  /* "flex-wrap: wrap" para que se coloque debajo si no entra.  */
   display: flex;
   flex-wrap: wrap;
   align-items: end;
@@ -32,20 +34,20 @@ header nav {
 .navbar-brand img {
   height: 5rem;
   /* Brillo normal */
-  filter: brightness(100%); 
+  filter: brightness(100%);
   /* Suaviza la transición */
-  transition: filter 0.3s ease-in-out; 
+  transition: filter 0.3s ease-in-out;
 }
 
 
+/* Uso de pseudoclase :hover */
 .navbar-brand img:hover {
   /* Aumenta el brillo al pasar el mouse */
-  filter: brightness(150%); 
+  filter: brightness(150%);
 }
 
 
 /* CSS personalizado para el botón hamburguesa */
-/* Ver de agregar para que la transicion al abrir el boton sea mas delicada */
 .navbar-toggler .navbar-toggler-icon {
   background-color: #690202;
 }
@@ -61,7 +63,7 @@ header nav {
   text-align: center;
   margin: 0 10px;
   background-color: rgba(255, 255, 255, 0.514);
-   /* Bordes redondeados */
+  /* Bordes redondeados */
   border-radius: 10px;
   /* Transiciones suaves */
   transition: background-color 0.3s ease, transform 0.2s ease;
@@ -71,12 +73,14 @@ header nav {
 .navbar-nav a:hover {
   /* Aumenta la opacidad al pasar el mouse */
   background-color: rgba(255, 255, 255, 0.603);
-  /* Ligeramente más grande */
+  /* Ligeramente mas grande con transform. */
   transform: scale(1.05);
   color: #690202;
 }
 
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
+/* Media queries para <nav> de desktop. */
 
 @media (min-width: 1024px) {
 
@@ -97,29 +101,29 @@ header nav {
     /* transform translate x o y para moverlo ligeramente por cuestiones esteticas sin tocar la imagen.
     Averiguar si existe otra forma */
     transform: translateY(1vh);
-
   }
 
-
-  .navbar-nav a{
+  .navbar-nav a {
     font-size: 2rem;
   }
 }
 
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
 /* Cambiamos flexbox por grid con responsive entre mobile y desktop */
 .catalogo {
   display: grid;
-  grid-template-columns: 1fr 1fr;
   /* 2 columnas en mobile */
-  gap: 5px;
+  grid-template-columns: 1fr 1fr;
   /* Espacio entre elementos */
+  gap: 5px;
   width: 95%;
   margin: 1% auto;
   box-sizing: border-box;
 }
 
 .catalogo a {
-/* Atributos necesarios para que las cajas de las imagenes se vean iguales. Acompañar con cover en las imagenes. */
+  /* Atributos necesarios para que las cajas de las imagenes se vean iguales. Acompañar con "object-fit: cover" en las imagenes. */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -132,32 +136,35 @@ header nav {
 .catalogo img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
   /* Recorta imágenes manteniendo la proporción */
+  object-fit: cover;
   border-radius: 10px;
   border: 1px solid #690202;
 }
 
+/* ------------------------------------------------------------------------------------------------------------- */
 
 @media (min-width: 1024px) {
 
   .catalogo {
-    grid-template-columns: repeat(4, 1fr);
     /* 4 columnas en pantallas grandes */
+    grid-template-columns: repeat(4, 1fr);
   }
 
   .catalogo a {
-    height: 250px;
     /* Aumenta la altura para pantallas más grandes */
+    height: 250px;
+
   }
 }
 
+/* ------------------------------------------------------------------------------------------------------------- */
 
 
 body {
   /* Fuente de Google fonts para todo el sitio */
   font-family: 'Oswald', sans-serif;
-  /* Fondo en degrade para todo el sitio */
+  /* Fondo en degrade para todo el sitio.*/
   /* Tratar de aplicar imagen en movimiento al fondo */
   background: url(assets/imagenes/background-body.png);
   background-size: cover;
@@ -194,8 +201,8 @@ iframe {
 .caja-index {
   display: flex;
   flex-direction: column;
+  margin: 2%;
 }
-
 
 body p {
   font-size: 1.2rem;
@@ -255,13 +262,12 @@ footer {
 }
 
 footer a {
-  /* Espacio a los lados */
-  margin: 0 px;
+  margin: 0;
   /* Alinear elementos sin usar flex. */
   justify-content: space-around;
 }
 
-
+/* ------------------------------------------------------------------------------------------------------------- */
 
 @media (min-width: 1024px) {
   body h2 {
@@ -307,8 +313,9 @@ footer a {
     flex-direction: row;
     justify-content: space-around;
   }
-
 }
+
+/* ------------------------------------------------------------------------------------------------------------- */
 
 .formulario {
   color: white;
@@ -330,7 +337,6 @@ footer a {
 .formulario input,
 .formulario select,
 .formulario textarea {
-  /* este width es del 100% de la clase "formulario" */
   margin: 5px;
   padding: 8px;
   border: 1px solid #ccc;
@@ -355,13 +361,15 @@ footer a {
   background-color: #4d0404fc;
 }
 
+/* ------------------------------------------------------------------------------------------------------------- */
+
 @media (min-width: 1024px) {
   .formulario {
     max-width: 20%;
   }
 }
 
-
+/* ------------------------------------------------------------------------------------------------------------- */
 
 .preview {
   /* Esto es lo que contiene cada link */
@@ -398,7 +406,7 @@ footer a {
 }
 
 .preview-texto {
-  /* Solución para que el texto ocupe toda la caja */
+  /* Solución para que el texto ocupe toda la caja en una proporcion 1 a 5.*/
   flex: 5;
 }
 
@@ -423,7 +431,6 @@ footer a {
 
 .nota-periodistica img {
   flex: 1;
-
   border-radius: 10px;
   border: 2px solid black;
   width: 100%;
@@ -456,22 +463,23 @@ footer a {
 .producto-logo {
   flex: 1;
   width: 100%;
-  border: 20px solid #690202;
+  border: 5px solid #690202;
   background-color: #690202;
   border-radius: 10px;
-}
-
-.logo {
-  height: 20vh;
-  object-fit: cover;
-  width: 90%;
-
 }
 
 .producto-descripcion {
   flex: 4;
 }
 
+.logo {
+  height: 20vh;
+  object-fit: cover;
+  width: 90%;
+}
+
+
+/* Los border-radius varian segun el tipo de pantalla. */
 .producto h2 {
   color: white;
   padding: 5px;
@@ -480,7 +488,6 @@ footer a {
   padding-left: 20px;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
-
 }
 
 .producto p {
@@ -518,28 +525,14 @@ footer a {
   max-height: 30vh;
   object-fit: cover;
   border: 5px solid #690202;
-  
-}
-
-.menu {
-  display: flex;
 
 }
-
-.menu ul {
-  width: 40%;
-}
-
-.menu img {
-  width: 60%;
-}
-
 
 address {
+  /* Se aplica a los iconos de E-mail, telefono y Instagram. */
   display: flex;
   justify-content: space-around;
   padding-top: 5%;
-
 }
 
 
@@ -547,70 +540,20 @@ address a img {
   height: 8vh;
   /* Con filter: invert cambiamos los iconos negros por blancos con el valor 1*/
   filter: invert(1);
-
 }
 
-
-.menu {
-  display: grid;
-  grid-template-columns: 1fr;
-  /* Una columna en mobile */
-  gap: 15px;
-  /* Espaciado entre elementos */
-  justify-items: center;
-  /* Centrar elementos en el grid */
-
-
-}
-
-table {
-  width: 100%;
-  /* Ocupa todo el ancho en mobile */
-  max-width: 300px;
-  /* Evita que sea demasiado grande */
-  border-collapse: collapse;
-  margin: auto;
-}
-
-th,
-td {
-  border: 2px solid #690202;
-  padding: 5px;
-  text-align: center;
-}
-
-th {
-  background-color: #690202fc;
-  font-size: 1.3rem;
-  color: white;
-}
-
-td {
-  font-size: 28px;
-  background-color: #ffcc00;
-  transition: transform 0.3s ease-in-out, background-color 0.3s;
-}
-
-td:hover {
-  transform: scale(1.1);
-  /* Aumenta el tamaño */
-  background-color: #ffdd44;
-  /* Color más claro */
-}
-
+/* Antes estilos en linea ahora aplicados con CSS para mas limpieza en el codigo y mantenibilidad. */
 .about-us {
   padding: 3.5%;
   text-align: justify;
   font-family: 'Caveat', cursive;
   border-top: 5px solid #ffcc00;
   border-bottom: 5px solid #ffcc00;
-
 }
 
 .about-us h2 {
   font-size: 3.5em;
   color: white;
-
 }
 
 .about-us p {
@@ -620,7 +563,7 @@ td:hover {
   padding: 3.5%;
 }
 
-
+/* -------------------------------------------------------------------- */
 
 @media (min-width: 1024px) {
   .preview {
@@ -691,11 +634,11 @@ td:hover {
     display: grid;
     grid-template-columns: 1.2fr 1fr 1fr;
     justify-items: center;
-    
-    
+
+
   }
 
-  .informacion img{
+  .informacion img {
     margin: 0 2.5%;
     width: 95%;
   }
@@ -727,3 +670,5 @@ td:hover {
   }
 
 }
+
+/* -------------------------------------------------------------------- */

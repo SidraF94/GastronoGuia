@@ -22,7 +22,6 @@
 </head>
 
 <body>
-
     <!-- Encabezado de cada pagina -->
     <header>
 
@@ -32,13 +31,14 @@
                 <div class="container-fluid d-flex justify-content-start align-items-end ">
                     <!-- logo + nombre -->
                     <a class="navbar-brand" href="./index.html">
-                        <img class="top-0 start-50" src="assets/imagenes/logo-gastronoguia.png" alt="">
+                        <!-- Acomodamos el logo con bootstrap. -->
+                        <img class="top-0 start-50" src="assets/imagenes/logo-gastronoguia.png" alt="logo-gastronoguia">
                     </a>
                     <h1>GastronoGuia</h1>
                 </div>
             </div>
 
-            
+
             <!-- Incorporamos con bootstrap "Hamburguesa responsive" para pantallas pequeñas. -->
             <button class="navbar-toggler position-absolute top-0 end-0 ms-auto" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
@@ -68,24 +68,16 @@
             </div>
             </div>
         </nav>
-
-
-
-
-
     </header>
     <!-- Encabezado de cada pagina. Fin -->
 
 
-
-
-
-
     <section>
         <h2><em>¿Donde te gustaria comer hoy?</em></h2>
+        <!-- Clase catalogo con display Grid para responsive -->
         <div class="catalogo">
             <!-- Imagen con enlace, <img> (<img> no debe cerrarse) dentro de <a> -->
-            <!-- corregir el tamaño de imagenes para que sean todas iguales -->
+
             <a href="paginas/restaurantes.html"><img src="assets/imagenes/sushi.png" alt="sushi"></a>
             <a href="paginas/restaurantes.html"><img src="assets/imagenes/gourmet.png" alt="alta cocina"></a>
             <a href="paginas/restaurantes.html"><img src="assets/imagenes/buffet.png" alt="buffet"></a>
@@ -107,25 +99,25 @@
 
     <div class="caja-index">
         <article class="pagina-principal">
-            <h3 style="margin-bottom: 1%;">¡Descubre lugares cerca de ti!</h3>
+            <h3>¡Descubre lugares cerca de ti!</h3>
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6809.074958132869!2d-64.221514!3d-31.426867!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432a20c8ba32e23%3A0x9e9e239fc2c87a2a!2sGilardo%20Gilardi%201493%2C%20X5010ATG%20C%C3%B3rdoba!5e0!3m2!1ses!2sar!4v1740608456875!5m2!1ses!2sar"
                 allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </article>
 
         <!-- Uso de <div> para agrupar -->
-
         <section class="pagina-principal">
             <article>
                 <div>
                     <h3>Noticias</h3>
+                    <!-- Usamos estilo en linea para un link especifico y único. -->
                     <a href="paginas/noticias.html" style=" margin-left: 2.5%; color: gray; font-size: 24px;">Ver
                         más
                         noticias</a>
                 </div>
             </article>
 
-            <section class="noticias">
+            <section>
                 <article>
                     <a href="paginas/noticias/noticia-pizza.html">
                         <div class="noticia">
