@@ -1,0 +1,24 @@
+@use "variables" as *;
+
+@mixin borde-estandar {
+  border-radius: $border-radius-normal;
+  border: 2.5px solid $color-primario;
+}
+
+@mixin titulos-desktop {
+  color: $color-fuente;
+  font-size: $tamanio-fuente-xxlg;
+  font-style: italic;
+}
+
+@mixin grid-dos-columnas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 0 2.5%;
+  //Aplicara estilo a los hijos.
+  & > * {
+    max-width: 95%;
+  }
+
+}

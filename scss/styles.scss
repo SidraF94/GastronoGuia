@@ -1,5 +1,11 @@
-@charset "UTF-8";
+@use "variables" as *;
+@use "sass:color";
+@use "mixins";
+
+
+
 /* Reset de CSS básico */
+
 * {
   margin: 0;
   padding: 0;
@@ -26,10 +32,11 @@ header nav {
 }
 
 .navbar h1 {
-  font-size: 2.5rem;
-  color: #690202;
-  text-shadow: white -3px 3px 1px;
+  font-size: $tamanio-fuente-xlg;
+  color: $color-primario;
+  text-shadow: $color-fuente -3px 3px 1px;
 }
+
 
 .navbar-brand img {
   height: 5rem;
@@ -47,12 +54,12 @@ header nav {
 
 /* CSS personalizado para el botón hamburguesa */
 .navbar-toggler .navbar-toggler-icon {
-  background-color: #690202;
+  background-color: $color-primario;
 }
 
 .navbar-nav a {
-  color: #690202;
-  font-size: 1.2rem;
+  color: $color-primario;
+  font-size: $tamanio-fuente-sm;
   /* Negrita con font-weight */
   font-weight: bold;
   /* Espacio a los costados */
@@ -61,7 +68,7 @@ header nav {
   margin: 0 10px;
   background-color: rgba(255, 255, 255, 0.514);
   /* Bordes redondeados */
-  border-radius: 5px;
+  border-radius: $border-radius-normal;
   /* Transiciones suaves */
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
@@ -71,33 +78,40 @@ header nav {
   background-color: rgba(255, 255, 255, 0.603);
   /* Ligeramente mas grande con transform. */
   transform: scale(1.05);
-  color: #690202;
+  color: $color-primario;
 }
 
 /* ---------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
 /* Media queries para <nav> de desktop. */
+
 @media (min-width: 1024px) {
+
   /* Clase creada especificamente para pantallas grandes. */
   .logo-desktop {
     display: flex;
     flex-direction: column;
     align-items: start;
   }
+
   .navbar h1 {
-    font-size: 6rem;
+    font-size: $tamanio-fuente-xxxxlg;
     line-height: 80px;
   }
+
   .navbar-brand img {
     height: 20vh;
     /* transform translate x o y para moverlo ligeramente por cuestiones esteticas sin tocar la imagen.
     Averiguar si existe otra forma */
     transform: translateY(1vh);
   }
+
   .navbar-nav a {
     margin-top: 2.5%;
-    font-size: 1.8rem;
+    font-size: $tamanio-fuente-lg;
   }
 }
+
 /* ---------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 /* Cambiamos flexbox por grid con responsive entre mobile y desktop */
 .catalogo {
@@ -127,25 +141,30 @@ header nav {
   height: 100%;
   /* Recorta imágenes manteniendo la proporción. */
   object-fit: cover;
-  border-radius: 5px;
-  border: 2.5px solid #690202;
+  @include mixins.borde-estandar;
 }
 
 /* ------------------------------------------------------------------------------------------------------------- */
+
 @media (min-width: 1024px) {
+
   .catalogo {
     /* 4 columnas en pantallas grandes */
     grid-template-columns: repeat(4, 1fr);
   }
+
   .catalogo a {
     /* Aumenta la altura para pantallas más grandes */
     height: 250px;
   }
 }
+
 /* ------------------------------------------------------------------------------------------------------------- */
+
+
 body {
   /* Fuente de Google fonts para todo el sitio */
-  font-family: "Oswald";
+  font-family: $fuente-principal;
   /* Fondo en degrade para todo el sitio. */
   /* Tratar de aplicar imagen en movimiento al fondo */
   background: url(assets/imagenes/background-body.png);
@@ -155,23 +174,23 @@ body {
 }
 
 body h2 {
-  font-size: 1.8rem;
-  color: white;
+  font-size: $tamanio-fuente-lg;
+  color: $color-fuente;
   margin-left: 2.5%;
-  padding-top: 10px;
+  padding-top: $padding-md;
 }
 
+
 h3 {
-  color: white;
-  font-size: 1.8rem;
+  color: $color-fuente;
+  font-size: $tamanio-fuente-lg;
   margin-left: 2.5%;
   margin-top: 4.5vh;
 }
 
 iframe {
   /* No olvidar sacar los atributos en linea de los iframe, por ejemplo el border */
-  border-radius: 5px;
-  border: 2.5px solid #690202;
+  @include mixins.borde-estandar;
   height: 30vh;
   width: 95%;
   margin: 2.5%;
@@ -185,8 +204,8 @@ iframe {
 }
 
 body p {
-  font-size: 1.5rem;
-  color: white;
+  font-size: $tamanio-fuente-md;
+  color: $color-fuente;
 }
 
 a {
@@ -199,9 +218,9 @@ a {
   display: flex;
   flex-direction: column;
   /* Alternativa etiqueta <hr> */
-  border-top: 2px solid #690202;
-  border-bottom: 2px solid #690202;
-  padding: 5px;
+  border-top: 2px solid $color-primario;
+  border-bottom: 2px solid $color-primario;
+  padding: $padding-sm;
   margin: 0 2.5%;
   width: 95%;
 }
@@ -213,28 +232,27 @@ a {
   height: auto;
   margin-top: 10px;
   align-self: center;
-  border-radius: 5px;
-  border: 2.5px solid #690202;
+  @include mixins.borde-estandar;
 }
 
 .contenido-noticia h3 {
-  font-size: 1.2rem;
+  font-size: $tamanio-fuente-sm;
   margin: 2%;
 }
 
 .contenido-noticia p {
-  color: antiquewhite;
-  font-size: 1.2rem;
+  color: $color-subtitulo;
+  font-size: $tamanio-fuente-sm;
 }
 
 footer {
   display: flex;
   flex-direction: column;
-  background-color: #690202;
+  background-color: $color-primario;
   text-align: center;
-  font-size: 1.5rem;
-  color: white;
-  padding: 5px;
+  font-size: $tamanio-fuente-md;
+  color: $color-fuente;
+  padding: $padding-sm;
 }
 
 footer a {
@@ -244,55 +262,58 @@ footer a {
 }
 
 /* ------------------------------------------------------------------------------------------------------------- */
+
 @media (min-width: 1024px) {
   body h2 {
-    color: white;
-    font-size: 3rem;
-    font-style: italic;
+    @include mixins.titulos-desktop ;
   }
+
   h3 {
-    font-size: 3rem;
+    font-size: $tamanio-fuente-xxlg;
     margin-left: 2.5%;
     margin-top: 2.5vh;
   }
+
   iframe {
     width: 95%;
     height: 50vh;
     margin: 0;
   }
+
   .caja-index {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    margin: 0 2.5%;
+    @include mixins.grid-dos-columnas;
   }
-  .caja-index > * {
-    max-width: 95%;
-  }
+
   .pagina-principal {
     flex: 1;
   }
+
   .noticia {
     flex-direction: row;
     padding: 2%;
   }
+
   .noticia img {
     width: 30%;
     height: auto;
     margin-right: 20px;
     margin-top: 0;
   }
+
   .contenido-noticia h3, .contenido-noticia p {
-    font-size: 1.5rem;
+    font-size: $tamanio-fuente-md;
   }
+
   footer {
     flex-direction: row;
     justify-content: space-around;
   }
 }
+
 /* ------------------------------------------------------------------------------------------------------------- */
+
 .formulario {
-  color: white;
+  color: $color-fuente;
   display: flex;
   /* flex-direction para acomodarlo en columna */
   flex-direction: column;
@@ -304,7 +325,7 @@ footer a {
 }
 
 .formulario label {
-  font-size: 1.5rem;
+  font-size: $tamanio-fuente-md;
 }
 
 /* Manera de agrupar elementos en comun, separando con "," */
@@ -312,42 +333,37 @@ footer a {
 .formulario select,
 .formulario textarea {
   margin: 5px;
-  padding: 10px;
-  border-radius: 5px;
-  border: 2.5px solid #690202;
+  padding: $padding-md;
+  @include mixins.borde-estandar;
 }
 
-.formulario input[type=submit] {
-  background-color: #690202;
-  color: white;
+.formulario input[type="submit"] {
+  background-color: $color-primario;
+  color: $color-fuente;
   border: none;
   cursor: pointer;
-  padding: 10px;
-  border-radius: 5px;
+  padding: $padding-md;
+  border-radius: $border-radius-normal;
   /* para alejarlo del footer */
   margin-bottom: 7vh;
 }
 
 /* cambiar de color (mas oscuro al pasar el mouse) */
-.formulario input[type=submit]:hover {
-  background-color: rgb(54.953271028, 1.046728972, 1.046728972);
+.formulario input[type="submit"]:hover {
+  background-color: color.adjust(#690202, $lightness: -10%);
 }
 
 /* ------------------------------------------------------------------------------------------------------------- */
+
 @media (min-width: 1024px) {
   .formulario {
     max-width: 80%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    margin: 0 2.5%;
+    @include mixins.grid-dos-columnas;
     align-items: center;
-  }
-  .formulario > * {
-    max-width: 95%;
   }
 }
 /* ------------------------------------------------------------------------------------------------------------- */
+
 .preview {
   /* Esto es lo que contiene cada link */
   text-decoration: none;
@@ -355,8 +371,8 @@ footer a {
   flex-direction: column;
   width: 95%;
   margin: 0 2.5%;
-  border-top: 1px solid #690202;
-  border-bottom: 2px solid #690202;
+  border-top: 1px solid $color-primario;
+  border-bottom: 2px solid $color-primario;
   padding: 15px 0;
 }
 
@@ -375,8 +391,7 @@ footer a {
   align-items: center;
   /* para que no se pegue al texto */
   margin-bottom: 2%;
-  border-radius: 5px;
-  border: 2.5px solid #690202;
+  @include mixins.borde-estandar;
   height: 1vh;
   max-height: 25vh;
 }
@@ -388,14 +403,14 @@ footer a {
 
 .preview-titulo {
   margin: 0;
-  font-size: 1.2rem;
-  color: white;
+  font-size: $tamanio-fuente-sm;
+  color: $color-fuente;
 }
 
 .preview-descripcion {
-  font-size: 1.2rem;
+  font-size: $tamanio-fuente-sm;
   /* Ajustar color */
-  color: antiquewhite;
+  color: $color-subtitulo;
 }
 
 .nota-periodistica {
@@ -407,8 +422,7 @@ footer a {
 
 .nota-periodistica img {
   flex: 1;
-  border-radius: 5px;
-  border: 2.5px solid #690202;
+  @include mixins.borde-estandar;
   width: 100%;
   height: auto;
 }
@@ -421,7 +435,7 @@ footer a {
   justify-content: center;
   text-align: justify;
   margin: 1%;
-  font-size: 1.5rem;
+  font-size: $tamanio-fuente-md;
 }
 
 /* Similar a la clase preview pero un poco mas compleja. */
@@ -435,9 +449,8 @@ footer a {
 .producto-logo {
   flex: 1;
   width: 100%;
-  border-radius: 5px;
-  border: 2.5px solid #690202;
-  background-color: #690202;
+  @include mixins.borde-estandar;
+  background-color: $color-primario;
 }
 
 .producto-descripcion {
@@ -452,9 +465,9 @@ footer a {
 
 /* Los border-radius varian segun el tipo de pantalla. */
 .producto h2 {
-  color: white;
+  color: $color-fuente;
   padding: 5px;
-  background-color: #690202;
+  background-color: $color-primario;
   margin: 0;
   padding-left: 20px;
   border-top-right-radius: 10px;
@@ -462,14 +475,14 @@ footer a {
 }
 
 .producto p {
-  color: #690202;
-  background-color: #ffcc00;
-  padding: 10px;
+  color: $color-primario;
+  background-color: $color-secundario;
+  padding: $padding-md;
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
   width: 100%;
   height: auto;
-  border: 5px solid #690202;
+  border: 5px solid $color-primario;
   text-align: center;
   display: flex;
 }
@@ -484,15 +497,14 @@ footer a {
   grid-template-columns: 1fr;
   justify-items: space-around;
   margin: 2.5%;
-  border-top: 10px double #690202;
+  border-top: 10px double $color-primario;
 }
 
 .informacion img {
   width: 25%;
   max-height: 30vh;
   object-fit: cover;
-  border-radius: 5px;
-  border: 2.5px solid #690202;
+  @include mixins.borde-estandar;
 }
 
 address {
@@ -512,119 +524,128 @@ address a img {
 .about-us {
   padding: 3.5%;
   text-align: justify;
-  font-family: "Caveat", cursive;
-  border-top: 5px solid #ffcc00;
-  border-bottom: 5px solid #ffcc00;
+  font-family: $fuente-secundaria, cursive;
+  border-top: 5px solid $color-secundario;
+  border-bottom: 5px solid $color-secundario;
 }
 
 .about-us h2 {
-  font-size: 3.5rem;
-  color: white;
+  font-size: $tamanio-fuente-xxxlg;
+  color: $color-fuente;
 }
 
 .about-us p {
-  font-size: 1.5rem;
+  font-size: $tamanio-fuente-md;
   line-height: 1.2;
-  color: white;
+  color: $color-fuente;
   padding: 3.5%;
-  line-height: 90%;
+  line-height: 90%
 }
 
 /* -------------------------------------------------------------------- */
+
 @media (min-width: 1024px) {
   .preview {
     display: flex;
   }
+
   .preview-caja {
     flex-direction: row;
   }
+
   .preview-imagen {
     width: auto;
     margin: 0 2.5%;
     height: 18vh;
   }
+
   .preview-titulo {
-    font-size: 1.8rem;
+    font-size: $tamanio-fuente-lg;
   }
+
   .preview-descripcion {
-    font-size: 1.5rem;
+    font-size: $tamanio-fuente-md;
   }
+
   .nota-periodistica {
     flex-direction: row;
     flex-wrap: wrap;
     display: block;
     justify-content: center;
   }
+
   .nota-periodistica div {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    margin: 0 2.5%;
+    @include mixins.grid-dos-columnas;
   }
-  .nota-periodistica div > * {
-    max-width: 95%;
-  }
+
   .nota-periodistica p {
-    font-size: 1.8rem;
+    font-size: $tamanio-fuente-lg;
   }
+
   .nota-periodistica img {
     margin: 0 2.5%;
     height: 30rem;
   }
+
   .producto {
     flex-direction: row;
   }
+
   .producto-logo {
     width: 100%;
     padding: 0;
     border-top-right-radius: 0px;
   }
+
   .producto h2 {
     border-top-left-radius: 0px;
   }
+
   .producto-logo img {
     margin-top: 2.5%;
     max-height: 35vh;
   }
+
   .producto p {
-    font-size: 1.8rem;
+    font-size: $tamanio-fuente-lg;
     border-bottom-left-radius: 0px;
   }
+
   .informacion {
     display: grid;
     grid-template-columns: 1.2fr 1fr 1fr;
     justify-items: center;
   }
+
+
   .informacion img {
     margin: 0 2.5%;
     width: 95%;
   }
+
   .informacion img,
   .informacion iframe,
   .informacion table {
     max-height: 40vh;
   }
+
   .about-us h2 {
-    font-size: 6rem;
+    font-size: $tamanio-fuente-xxxxlg;
     margin-top: 0%;
     text-decoration: none;
   }
+
   .about-us p {
-    font-size: 2.5rem;
+    font-size: $tamanio-fuente-xlg;
     text-align: center;
-    line-height: 90%;
+    line-height: 90%
   }
+
   .dos-columnas {
-    display: grid;
+    @include mixins.grid-dos-columnas;
     grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    margin: 0 2.5%;
-    grid-template-columns: 1fr 1fr;
-  }
-  .dos-columnas > * {
-    max-width: 95%;
   }
 }
-/* -------------------------------------------------------------------- */
 
-/*# sourceMappingURL=styles.css.map */
+
+/* -------------------------------------------------------------------- */
