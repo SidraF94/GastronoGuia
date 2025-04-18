@@ -1,0 +1,122 @@
+// Media queries para tablet. 
+
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixin" as mixin;
+
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+    .navbar {
+        h1 {
+            font-size: $tamanio-fuente-xxxlg;
+        }
+    }
+
+    .navbar-brand {
+        img {
+            height: 5.5rem;
+        }
+    }
+
+    //Agrandamos botón del menu hamburguesa.
+    .navbar-toggler-icon {
+        height: 5vh;
+        width: 6vw;
+    }
+
+    footer {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    main {
+        padding: 0 5%;
+    }
+
+    h2 {
+        font-size: $tamanio-fuente-xlg;
+    }
+
+    iframe {
+        height: 40vh;
+        width: 85%;
+        margin: 2.5% 7.5%;
+    }
+
+    .catalogo {
+        a {
+            height: 20vh;
+        }
+    }
+
+    .noticia {
+        flex-direction: row;
+        img {
+            width: 30vw ;
+            margin-right: 5vw;
+        }
+    }
+
+    .contenido-noticias {
+        h3 {
+            font-size: $tamanio-fuente-lg;
+        }
+    }
+
+    .texto-con-gif {
+        justify-content: center;
+    }
+
+    .preview-caja {
+        padding: 0;
+        @include mixin.grid-dos-columnas;   
+    }
+
+    .preview-imagen {
+        height:25vh;
+        width: 85%;
+    }
+
+    .preview-titulo {
+        font-size: $tamanio-fuente-md;
+    }
+
+    .nota-periodistica {
+        p {
+            font-size: $tamanio-fuente-md ;
+        }
+
+        img {
+         width: 80vw;
+        }
+    }
+
+    .producto {
+        p {
+            font-size: $tamanio-fuente-md;
+        }
+    }
+
+    .producto-logo {
+        width: 70%;
+        align-self: center;
+    }
+
+    .about-us {
+        p {
+            font-size: $tamanio-fuente-lg;
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+}

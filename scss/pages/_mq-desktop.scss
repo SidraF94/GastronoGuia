@@ -1,0 +1,211 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixin" as mixin;
+
+
+@media (min-width: 1024px) {
+
+  /* Clase creada especificamente para pantallas grandes. */
+  .logo-desktop {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .navbar h1 {
+    font-size: $tamanio-fuente-xxxxlg;
+    line-height: 80px;
+  }
+
+  .navbar-brand img {
+    height: 20vh;
+    /* transform translate x o y para moverlo ligeramente por cuestiones esteticas sin tocar la imagen.
+      Averiguar si existe otra forma */
+    transform: translateY(1vh);
+  }
+
+  .navbar-nav a {
+    margin-top: 2.5%;
+    font-size: $tamanio-fuente-lg;
+  }
+
+  .catalogo {
+    /* 4 columnas en pantallas grandes */
+    grid-template-columns: repeat(4, 1fr);
+
+    a {
+      /* Aumenta la altura para pantallas más grandes */
+      height: 250px;
+    }
+  }
+
+  h2 {
+    @include mixin.titulos-desktop;
+  }
+
+  h3 {
+    font-size: $tamanio-fuente-xxlg;
+    margin-left: 2.5%;
+    margin-top: 2.5vh;
+  }
+
+  iframe {
+    width: 95%;
+    height: 50vh;
+    margin: 0;
+  }
+
+  .caja-index {
+    @include mixin.grid-dos-columnas;
+  }
+
+  .pagina-principal {
+    flex: 1;
+  }
+
+  .noticia {
+    flex-direction: row;
+    padding: 2%;
+
+    img {
+      width: 30%;
+      height: auto;
+      margin-right: 20px;
+      margin-top: 0;
+    }
+  }
+
+  .contenido-noticia h3,
+  .contenido-noticia p {
+    font-size: $tamanio-fuente-md;
+  }
+
+  footer {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .formulario {
+    max-width: 60%;
+    align-items: center;
+    @include mixin.grid-dos-columnas;
+  }
+
+  .texto-con-gif {
+    justify-content: start;
+  }
+
+  .preview {
+    display: flex;
+  }
+
+  .preview-caja {
+    flex-direction: row;
+  }
+
+  .preview-imagen {
+    flex: 1;
+    margin: 0 2.5%;
+    height: 18vh;
+  }
+
+  .preview-titulo {
+    font-size: $tamanio-fuente-lg;
+  }
+
+  .preview-descripcion {
+    font-size: $tamanio-fuente-md;
+  }
+
+  .nota-periodistica {
+    flex-direction: row;
+    flex-wrap: wrap;
+    display: block;
+    margin: auto 0;
+    justify-content: center;
+    
+
+    div {
+      @include mixin.grid-dos-columnas;
+      justify-content: center;
+      align-items: center;
+    }
+
+    p {
+      font-size: $tamanio-fuente-lg;
+      margin: 2% 5%;
+    }
+
+    img {
+      margin: 0;
+      height: 30rem;
+    }
+  }
+
+  .producto {
+    flex-direction: row;
+
+    h2 {
+      border-top-left-radius: 0px;
+    }
+
+    p {
+      font-size: $tamanio-fuente-lg;
+      border-bottom-left-radius: 0px;
+    }
+  }
+
+  .producto-logo {
+    width: 100%;
+    padding: 0;
+    border-top-right-radius: 0px;
+
+    img {
+      margin-top: 2.5%;
+      max-height: 35vh;
+    }
+  }
+
+  .informacion {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    justify-items: center;
+
+    img {
+      margin: 0 2.5%;
+      width: 95%;
+    }
+
+    img,
+    iframe,
+    table {
+      max-height: 40vh;
+    }
+  }
+
+  .seccion-dividida {
+    @include mixin.grid-dos-columnas;
+  }
+
+  .about-us {
+    height: 90vh;
+    margin: 0;
+
+    p {
+      font-size: $tamanio-fuente-xlg;
+    }
+
+    label {
+      height: 10vh;
+      width: 18vw;
+      text-align: center;
+      display: grid;
+      align-items: center;
+      font-size: $tamanio-fuente-xlg;
+    }
+  }
+
+  .libro {
+    width: 50vw;
+    height: 80vh;
+  }
+}

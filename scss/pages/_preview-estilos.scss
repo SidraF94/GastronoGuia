@@ -1,0 +1,56 @@
+/* Este SCSS contiene los estilos de dos paginas distintas
+restaurantes.html y noticias.html. Ambas utilizan los mismos estilos que
+serian como tarjetas con enlaces a sus respectivas paginas. */
+
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixin" as mixin;
+
+.preview {
+    /* Esto es lo que contiene cada link */
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    margin: 0 2.5%;
+    border-top: 1px solid $color-primario;
+    border-bottom: 2px solid $color-primario;
+    padding: 15px 0;
+  }
+  
+  .preview-caja {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2vh;
+    text-align: center;
+  }
+  
+  .preview-imagen {
+    flex: 1;
+    object-fit: cover;
+    align-items: center;
+    /* Para que no se pegue al texto. */
+    margin-bottom: 2%;
+    @include mixin.borde-estandar;
+    height: 1vh;
+    max-height: 20vh;
+    width: 70%;
+  }
+  
+  .preview-texto {
+    /* Solución para que el texto ocupe toda la caja en una proporcion 1 a 2. */
+    flex: 2;
+  }
+  
+  .preview-titulo {
+    margin: 0;
+    font-size: $tamanio-fuente-sm;
+    color: $color-fuente;
+  }
+  
+  .preview-descripcion {
+    font-size: $tamanio-fuente-sm;
+    /* Ajustar color */
+    color: $color-subtitulo;
+  }

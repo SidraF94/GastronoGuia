@@ -1,0 +1,46 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixin" as mixin;
+
+/* Estilos generales de todas las paginas. */
+
+body {
+    /* Fuente de Google fonts para todo el sitio */
+    font-family: $fuente-principal;
+    background: url(../../assets/imagenes/background-body.png);
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+h2 {
+    font-size: $tamanio-fuente-lg;
+    color: $color-fuente;
+    margin-left: 2.5%;
+    padding-top: $padding-md;
+}
+
+h3 {
+    color: $color-fuente;
+    font-size: $tamanio-fuente-lg;
+    margin-left: 2.5%;
+    margin-top: 4.5vh;
+}
+
+iframe {
+    /* No olvidar sacar los atributos en linea de los iframe, por ejemplo el border */
+    height: 30vh;
+    width: 95%;
+    margin: 2.5%;
+    @include mixin.borde-estandar;
+}
+
+p {
+    font-size: $tamanio-fuente-md;
+    color: $color-fuente;
+}
+
+a {
+    text-decoration: none;
+    /* Color heredado si no se especifica */
+    color: inherit;
+}
