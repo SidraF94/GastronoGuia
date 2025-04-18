@@ -67,7 +67,6 @@ input[type="checkbox"] {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: #fff;
   border: 7px inset darkgoldenrod;
   transform-origin: left;
   transition: transform 2s linear;
@@ -95,7 +94,6 @@ input[type="checkbox"] {
   height: 100%;
   padding: 20px;
   box-sizing: border-box;
-  background: #fafafa;
   z-index: -1;
   background-image: url(../assets/imagenes/hoja-papel.jpg);
   background-size: cover;

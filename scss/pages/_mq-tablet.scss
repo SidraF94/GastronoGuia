@@ -4,12 +4,16 @@
 @use "../abstracts/mixin" as mixin;
 
 
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
 
     .navbar {
         h1 {
             font-size: $tamanio-fuente-xxxlg;
         }
+    }
+
+    .navbar-nav {
+        a {}
     }
 
     .navbar-brand {
@@ -51,8 +55,9 @@
 
     .noticia {
         flex-direction: row;
+
         img {
-            width: 30vw ;
+            width: 30vw;
             margin-right: 5vw;
         }
     }
@@ -69,11 +74,11 @@
 
     .preview-caja {
         padding: 0;
-        @include mixin.grid-dos-columnas;   
+        @include mixin.grid-dos-columnas;
     }
 
     .preview-imagen {
-        height:25vh;
+        height: 25vh;
         width: 85%;
     }
 
@@ -87,7 +92,7 @@
         }
 
         img {
-         width: 80vw;
+            width: 80vw;
         }
     }
 
@@ -107,6 +112,164 @@
             font-size: $tamanio-fuente-lg;
         }
     }
+}
+
+
+
+
+
+
+
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .navbar {
+        h1 {
+            font-size: $tamanio-fuente-xlg;
+        }
+    }
+
+    .navbar-nav {
+        gap: 0.5rem;
+    }
+
+    main {
+        padding: 0 2.5%;
+    }
+
+    iframe {
+
+        height: 40vh;
+    }
+
+    .catalogo {
+        grid-template-columns: repeat(4, 1fr);
+
+        a {
+            height: 20vh;
+        }
+    }
+
+    .caja-index {
+        @include mixin.grid-dos-columnas;
+        grid-template-columns: 1fr 2fr;
+        justify-content: center;
+    }
+
+    .noticia {
+        flex-direction: row;
+        height: 20vh;
+
+        img {
+            width: 30%;
+            height: auto;
+            margin-right: 20px;
+            margin-top: 0;
+        }
+    }
+
+    .contenido-noticia {
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        h3 {
+            font-size: $tamanio-fuente-sm;
+        }
+
+        p {
+            font-size: $tamanio-fuente-sm;
+            line-height: 100%;
+        }
+    }
+
+    footer {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+
+    .seccion-dividida {
+        @include mixin.grid-dos-columnas;
+    }
+
+    .preview {
+        height: 30vh;
+        overflow: hidden;
+        justify-content: center;
+
+        .preview-caja {
+            flex-direction: row;
+            text-align: left;
+        }
+
+        .preview-imagen {
+            height: 18vh;
+            width: 30%;
+            margin-right: 5%;
+        }
+    }
+
+    .about-us {
+        p {
+            font-size: $tamanio-fuente-lg;
+        }
+    }
+
+    .pagina {
+        img {
+            width: 70%;
+            margin: 0 auto;
+        }
+    }
+
+    .formulario {
+        margin: 0 25%;
+    }
+
+    .nota-periodistica {
+        flex-direction: row;
+        flex-wrap: wrap;
+        display: block;
+        margin: auto 0;
+        justify-content: center;
+        margin: 0 auto;
+
+
+        div {
+            @include mixin.grid-dos-columnas;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        p {
+            font-size: $tamanio-fuente-sm;
+            margin: 2% 5%;
+        }
+
+        img {
+            margin: 0;
+            height: 20rem;
+        }
+    }
+
+    .producto {
+        @include mixin.grid-dos-columnas
+    }
+
+    .producto-logo {
+        height: 40vh;
+    }
+
+    .informacion {
+       display: grid;
+       grid-template-columns: repeat(3, 1fr);
+        border: none;
+        iframe {
+            height: 30vh;
+            margin: 0 auto;
+        }
+    }
+
 
 
 
@@ -120,3 +283,6 @@
 
 
 }
+
+
+// Estilos específicos para tablet apaisada.

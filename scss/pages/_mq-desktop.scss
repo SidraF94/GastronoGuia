@@ -2,7 +2,7 @@
 @use "../abstracts/mixin" as mixin;
 
 
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
 
   /* Clase creada especificamente para pantallas grandes. */
   .logo-desktop {
@@ -23,11 +23,19 @@
     transform: translateY(1vh);
   }
 
-  .navbar-nav a {
+
+
+  .navbar-nav {
+    flex-wrap: wrap;
+    gap: 1rem;
+    .nav-item {
+      flex: 1 1 auto;
+    }
+    a {
     margin-top: 2.5%;
     font-size: $tamanio-fuente-lg;
   }
-
+  }
   .catalogo {
     /* 4 columnas en pantallas grandes */
     grid-template-columns: repeat(4, 1fr);

@@ -464,7 +464,6 @@ input[type=checkbox] {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: #fff;
   border: 7px inset darkgoldenrod;
   transform-origin: left;
   transition: transform 2s linear;
@@ -491,7 +490,6 @@ input[type=checkbox] {
   height: 100%;
   padding: 20px;
   box-sizing: border-box;
-  background: #fafafa;
   z-index: -1;
   background-image: url(../assets/imagenes/hoja-papel.jpg);
   background-size: cover;
@@ -513,7 +511,7 @@ input[type=checkbox] {
   /* Se oculta rápido */
 }
 
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
   .navbar h1 {
     font-size: 3.5rem;
   }
@@ -591,7 +589,152 @@ input[type=checkbox] {
     font-size: 1.8rem;
   }
 }
-@media (min-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .navbar h1 {
+    font-size: 2.5rem;
+  }
+  .navbar-nav {
+    gap: 0.5rem;
+  }
+  main {
+    padding: 0 2.5%;
+  }
+  iframe {
+    height: 40vh;
+  }
+  .catalogo {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .catalogo a {
+    height: 20vh;
+  }
+  .caja-index {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 0 2.5%;
+    /* "& > *" Aplica estilos a todos los hijos de este mixin. Va a tener un margen de 5% entre los dos costados
+    por eso sus hijos deberian ocupar el 95% del contenedor. */
+    grid-template-columns: 1fr 2fr;
+    justify-content: center;
+  }
+  .caja-index > * {
+    max-width: 95%;
+  }
+  .noticia {
+    flex-direction: row;
+    height: 20vh;
+  }
+  .noticia img {
+    width: 30%;
+    height: auto;
+    margin-right: 20px;
+    margin-top: 0;
+  }
+  .contenido-noticia {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .contenido-noticia h3 {
+    font-size: 1.2rem;
+  }
+  .contenido-noticia p {
+    font-size: 1.2rem;
+    line-height: 100%;
+  }
+  footer {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .seccion-dividida {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 0 2.5%;
+    /* "& > *" Aplica estilos a todos los hijos de este mixin. Va a tener un margen de 5% entre los dos costados
+    por eso sus hijos deberian ocupar el 95% del contenedor. */
+  }
+  .seccion-dividida > * {
+    max-width: 95%;
+  }
+  .preview {
+    height: 30vh;
+    overflow: hidden;
+    justify-content: center;
+  }
+  .preview .preview-caja {
+    flex-direction: row;
+    text-align: left;
+  }
+  .preview .preview-imagen {
+    height: 18vh;
+    width: 30%;
+    margin-right: 5%;
+  }
+  .about-us p {
+    font-size: 1.8rem;
+  }
+  .pagina img {
+    width: 70%;
+    margin: 0 auto;
+  }
+  .formulario {
+    margin: 0 25%;
+  }
+  .nota-periodistica {
+    flex-direction: row;
+    flex-wrap: wrap;
+    display: block;
+    margin: auto 0;
+    justify-content: center;
+    margin: 0 auto;
+  }
+  .nota-periodistica div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 0 2.5%;
+    /* "& > *" Aplica estilos a todos los hijos de este mixin. Va a tener un margen de 5% entre los dos costados
+    por eso sus hijos deberian ocupar el 95% del contenedor. */
+    justify-content: center;
+    align-items: center;
+  }
+  .nota-periodistica div > * {
+    max-width: 95%;
+  }
+  .nota-periodistica p {
+    font-size: 1.2rem;
+    margin: 2% 5%;
+  }
+  .nota-periodistica img {
+    margin: 0;
+    height: 20rem;
+  }
+  .producto {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 0 2.5%;
+    /* "& > *" Aplica estilos a todos los hijos de este mixin. Va a tener un margen de 5% entre los dos costados
+    por eso sus hijos deberian ocupar el 95% del contenedor. */
+  }
+  .producto > * {
+    max-width: 95%;
+  }
+  .producto-logo {
+    height: 40vh;
+  }
+  .informacion {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border: none;
+  }
+  .informacion iframe {
+    height: 30vh;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 1025px) {
   /* Clase creada especificamente para pantallas grandes. */
   .logo-desktop {
     display: flex;
@@ -607,6 +750,13 @@ input[type=checkbox] {
     /* transform translate x o y para moverlo ligeramente por cuestiones esteticas sin tocar la imagen.
       Averiguar si existe otra forma */
     transform: translateY(1vh);
+  }
+  .navbar-nav {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .navbar-nav .nav-item {
+    flex: 1 1 auto;
   }
   .navbar-nav a {
     margin-top: 2.5%;
