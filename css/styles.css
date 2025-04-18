@@ -9,7 +9,7 @@
 body {
   /* Fuente de Google fonts para todo el sitio */
   font-family: "Oswald";
-  background: url(../../assets/imagenes/background-body.png);
+  background: url(../assets/imagenes/background-body.png);
   background-size: cover;
   background-attachment: fixed;
   min-height: 100vh;
@@ -52,7 +52,7 @@ a {
 header {
   border-bottom: 1vh solid #690202;
   /* Banner del <header> distinto del <body>, imagen centrada */
-  background: url(../../assets/imagenes/banner-background.PNG) no-repeat;
+  background: url(../assets/imagenes/banner-background.PNG) no-repeat;
   background-position: center;
   background-size: cover;
   margin-bottom: 2%;
@@ -469,7 +469,7 @@ input[type=checkbox] {
   transform-origin: left;
   transition: transform 2s linear;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  background-image: url(../../assets/imagenes/tapa-libro.jpg);
+  background-image: url(../assets/imagenes/tapa-libro.jpg);
   background-size: cover;
   display: flex;
 }
@@ -493,7 +493,7 @@ input[type=checkbox] {
   box-sizing: border-box;
   background: #fafafa;
   z-index: -1;
-  background-image: url(../../assets/imagenes/hoja-papel.jpg);
+  background-image: url(../assets/imagenes/hoja-papel.jpg);
   background-size: cover;
   background-position: center;
   border-left: 10px inset rgba(234, 225, 206, 0.7);
