@@ -5,6 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- CDN de Magic css. -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magic/1.1.0/magic.min.css">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
@@ -24,7 +29,8 @@
                 <div class="container-fluid d-flex justify-content-start align-items-end ">
                     <!-- logo + nombre -->
                     <a class="navbar-brand" href="../../index.html">
-                        <img class="top-0 start-50" src="../../assets/imagenes/logo-gastronoguia.png" alt="logo-gastronoguia">
+                        <img class="top-0 start-50" src="../../assets/imagenes/logo-gastronoguia.png"
+                            alt="logo-gastronoguia">
                     </a>
                     <h1>GastronoGuia</h1>
                 </div>
@@ -67,10 +73,10 @@
         <div class="producto">
             <div class="producto-logo">
                 <div>
-                    <img class="logo" src="../../assets/imagenes/logo-parrilla.png" alt="Parrilla familiar">
+                    <img  class="logo " src="../../assets/imagenes/logo-parrilla.png" alt="Parrilla familiar">
                 </div>
 
-                <address>
+                <address data-aos="fade-down">
                     <a href="https://mail.google.com/mail/u/0/?pli=1#inbox" target="_blank"><img
                             src="../../assets/imagenes/email.svg" alt="email"></a>
                     <a href="https://www.instagram.com/parrillala.familia/" target="_blank"><img
@@ -78,7 +84,7 @@
                     <a href="#"><img src="../../assets/imagenes/telefono.svg" alt="telefono"></a>
                 </address>
             </div>
-            <div class="producto-descripcion">
+            <div class="producto-descripcion magictime boingInUp">
                 <h2>Parrilla Familiar</h2>
                 <p>La Parrilla Familiar es un restaurante ubicado en Avenida Argentina 5000, conocido por su excelente
                     selección de cortes a la parrilla, ambiente acogedor y atención de calidad.
@@ -159,6 +165,12 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        AOS.init();
+    </script>
 
 
 </body>

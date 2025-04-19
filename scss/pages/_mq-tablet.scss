@@ -12,10 +12,6 @@
         }
     }
 
-    .navbar-nav {
-        a {}
-    }
-
     .navbar-brand {
         img {
             height: 5.5rem;
@@ -98,12 +94,12 @@
 
     .producto {
         p {
-            font-size: $tamanio-fuente-md;
+            font-size: $tamanio-fuente-sm;
         }
     }
 
     .producto-logo {
-        width: 70%;
+        width: 100%;
         align-self: center;
     }
 
@@ -121,7 +117,11 @@
 
 
 
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+@media (min-width: 768px) and (max-width: 1200px) and (orientation: landscape) {
+    main {
+        padding: 0 5%;
+    }
+    
     .navbar {
         h1 {
             font-size: $tamanio-fuente-xlg;
@@ -139,6 +139,7 @@
     iframe {
 
         height: 40vh;
+        width: 100%;
     }
 
     .catalogo {
@@ -150,9 +151,10 @@
     }
 
     .caja-index {
-        @include mixin.grid-dos-columnas;
-        grid-template-columns: 1fr 2fr;
+        grid-template-columns: 1.5fr 2fr;
         justify-content: center;
+        @include mixin.grid-dos-columnas;
+        
     }
 
     .noticia {
@@ -160,7 +162,7 @@
         height: 20vh;
 
         img {
-            width: 30%;
+            width: 90%;
             height: auto;
             margin-right: 20px;
             margin-top: 0;
@@ -177,7 +179,7 @@
 
         p {
             font-size: $tamanio-fuente-sm;
-            line-height: 100%;
+            display: none;
         }
     }
 
@@ -222,7 +224,9 @@
     }
 
     .formulario {
-        margin: 0 25%;
+        margin: 0 15%;
+        width: 100%;
+
     }
 
     .nota-periodistica {
@@ -235,10 +239,9 @@
 
 
         div {
-            @include mixin.grid-dos-columnas;
             justify-content: center;
             align-items: center;
-
+            @include mixin.grid-dos-columnas;
         }
 
         p {
@@ -253,11 +256,11 @@
     }
 
     .producto {
-        @include mixin.grid-dos-columnas
-    }
-
-    .producto-logo {
-        height: 40vh;
+        @include mixin.grid-dos-columnas;
+        .producto-logo {
+            height: 45vh;
+            width: 90%;
+        }
     }
 
     .informacion {
@@ -269,6 +272,8 @@
             margin: 0 auto;
         }
     }
+    
+
 
 
 

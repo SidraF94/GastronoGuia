@@ -12,11 +12,12 @@ body {
   background: url(../assets/imagenes/background-body.png);
   background-size: cover;
   background-attachment: fixed;
-  min-height: 100vh;
+  /* 120 vh de altura al body para que funcionen las animaciones de  AOS que no entran en el viewport.*/
+  min-height: 120vh;
 }
 
 h2 {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   color: white;
   margin-left: 2.5%;
   padding-top: 10px;
@@ -24,7 +25,7 @@ h2 {
 
 h3 {
   color: white;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   margin-left: 2.5%;
   margin-top: 4.5vh;
 }
@@ -116,7 +117,7 @@ footer {
   flex-direction: column;
   background-color: #690202;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: white;
   padding: 5px;
   margin-top: 2%;
@@ -175,7 +176,7 @@ footer a {
   width: 95%;
 }
 .noticia img {
-  width: 70vw;
+  width: 60vw;
   /* Height auto para que no se deforme la imagen */
   height: auto;
   margin-top: 10px;
@@ -185,7 +186,7 @@ footer a {
 }
 
 .contenido-noticia h3 {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   margin: 2%;
 }
 .contenido-noticia p {
@@ -205,7 +206,7 @@ footer a {
   gap: 10px;
 }
 .formulario label {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 .formulario input,
 .formulario select,
@@ -239,7 +240,7 @@ footer a {
   margin-right: 2.5%;
 }
 .texto-con-gif img {
-  height: 15vh;
+  height: 10vh;
   border-radius: 100px;
 }
 
@@ -511,6 +512,86 @@ input[type=checkbox] {
   /* Se oculta rápido */
 }
 
+@media (orientation: landscape) {
+  main {
+    padding: 0 5%;
+  }
+  .catalogo {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .catalogo a {
+    height: 30vh;
+  }
+  footer {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  iframe {
+    height: 60vh;
+    width: 70%;
+    margin: 2.5%;
+    margin: 2% auto;
+  }
+  .caja-index {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+  .caja-index iframe {
+    width: 80%;
+    height: auto;
+  }
+  .caja-index .noticia {
+    margin: 1%;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    line-height: 110%;
+    height: 20vh;
+    border: none;
+  }
+  .caja-index .noticia .contenido-noticia h3 {
+    font-size: 1.2rem;
+    overflow: hidden;
+  }
+  .caja-index .noticia .contenido-noticia p {
+    display: none;
+  }
+  .caja-index .noticia img {
+    width: 15vw;
+    margin-right: 2vw;
+  }
+  .formulario {
+    padding: 0 10%;
+  }
+  .preview-caja {
+    flex-direction: row;
+  }
+  .preview-caja .preview-imagen {
+    height: 100%;
+    width: 25%;
+    object-fit: center;
+  }
+  .preview-caja .preview-texto {
+    line-height: 120%;
+    margin-left: 2.5vw;
+  }
+  .producto {
+    flex-direction: row;
+  }
+  .producto .producto-logo {
+    flex: 2;
+    height: 50vh;
+  }
+  .producto .producto-logo .logo {
+    height: 30vh;
+  }
+  .producto .producto-descripcion {
+    line-height: 120%;
+  }
+  .nota-periodistica div img {
+    width: 70%;
+  }
+}
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
   .navbar h1 {
     font-size: 3.5rem;
@@ -579,17 +660,20 @@ input[type=checkbox] {
     width: 80vw;
   }
   .producto p {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
   .producto-logo {
-    width: 70%;
+    width: 100%;
     align-self: center;
   }
   .about-us p {
     font-size: 1.8rem;
   }
 }
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+@media (min-width: 768px) and (max-width: 1200px) and (orientation: landscape) {
+  main {
+    padding: 0 5%;
+  }
   .navbar h1 {
     font-size: 2.5rem;
   }
@@ -601,6 +685,7 @@ input[type=checkbox] {
   }
   iframe {
     height: 40vh;
+    width: 100%;
   }
   .catalogo {
     grid-template-columns: repeat(4, 1fr);
@@ -609,14 +694,14 @@ input[type=checkbox] {
     height: 20vh;
   }
   .caja-index {
+    grid-template-columns: 1.5fr 2fr;
+    justify-content: center;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
     margin: 0 2.5%;
     /* "& > *" Aplica estilos a todos los hijos de este mixin. Va a tener un margen de 5% entre los dos costados
     por eso sus hijos deberian ocupar el 95% del contenedor. */
-    grid-template-columns: 1fr 2fr;
-    justify-content: center;
   }
   .caja-index > * {
     max-width: 95%;
@@ -626,7 +711,7 @@ input[type=checkbox] {
     height: 20vh;
   }
   .noticia img {
-    width: 30%;
+    width: 90%;
     height: auto;
     margin-right: 20px;
     margin-top: 0;
@@ -640,7 +725,7 @@ input[type=checkbox] {
   }
   .contenido-noticia p {
     font-size: 1.2rem;
-    line-height: 100%;
+    display: none;
   }
   footer {
     flex-direction: row;
@@ -679,7 +764,8 @@ input[type=checkbox] {
     margin: 0 auto;
   }
   .formulario {
-    margin: 0 25%;
+    margin: 0 15%;
+    width: 100%;
   }
   .nota-periodistica {
     flex-direction: row;
@@ -690,14 +776,14 @@ input[type=checkbox] {
     margin: 0 auto;
   }
   .nota-periodistica div {
+    justify-content: center;
+    align-items: center;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
     margin: 0 2.5%;
     /* "& > *" Aplica estilos a todos los hijos de este mixin. Va a tener un margen de 5% entre los dos costados
     por eso sus hijos deberian ocupar el 95% del contenedor. */
-    justify-content: center;
-    align-items: center;
   }
   .nota-periodistica div > * {
     max-width: 95%;
@@ -721,8 +807,9 @@ input[type=checkbox] {
   .producto > * {
     max-width: 95%;
   }
-  .producto-logo {
-    height: 40vh;
+  .producto .producto-logo {
+    height: 45vh;
+    width: 90%;
   }
   .informacion {
     display: grid;
@@ -734,7 +821,10 @@ input[type=checkbox] {
     margin: 0 auto;
   }
 }
-@media (min-width: 1025px) {
+@media (min-width: 1200px) {
+  main {
+    padding: 0;
+  }
   /* Clase creada especificamente para pantallas grandes. */
   .logo-desktop {
     display: flex;
@@ -746,7 +836,7 @@ input[type=checkbox] {
     line-height: 80px;
   }
   .navbar-brand img {
-    height: 20vh;
+    height: 18vh;
     /* transform translate x o y para moverlo ligeramente por cuestiones esteticas sin tocar la imagen.
       Averiguar si existe otra forma */
     transform: translateY(1vh);
@@ -768,7 +858,7 @@ input[type=checkbox] {
   }
   .catalogo a {
     /* Aumenta la altura para pantallas más grandes */
-    height: 250px;
+    height: 25vh;
   }
   h2 {
     color: white;
@@ -776,14 +866,9 @@ input[type=checkbox] {
     font-style: italic;
   }
   h3 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     margin-left: 2.5%;
     margin-top: 2.5vh;
-  }
-  iframe {
-    width: 95%;
-    height: 50vh;
-    margin: 0;
   }
   .caja-index {
     display: grid;
@@ -796,30 +881,42 @@ input[type=checkbox] {
   .caja-index > * {
     max-width: 95%;
   }
-  .pagina-principal {
+  .caja-index .pagina-principal {
     flex: 1;
+    border-bottom: 5px double #690202;
   }
-  .noticia {
+  .caja-index .noticia {
     flex-direction: row;
     padding: 2%;
+    border-top: 5px solid #690202;
   }
-  .noticia img {
-    width: 30%;
+  .caja-index .noticia .contenido-noticia h3 {
+    font-size: 1.8rem;
+  }
+  .caja-index .noticia .contenido-noticia p {
+    display: block;
+    line-height: 130%;
+  }
+  .caja-index .noticia img {
+    width: 80%;
     height: auto;
     margin-right: 20px;
     margin-top: 0;
   }
-  .contenido-noticia h3,
-  .contenido-noticia p {
-    font-size: 1.5rem;
+  .caja-index iframe {
+    width: 80%;
+    height: 50vh;
+    margin: 0;
   }
   footer {
     flex-direction: row;
     justify-content: space-around;
+    font-size: 1.5rem;
   }
   .formulario {
-    max-width: 60%;
+    max-width: 70%;
     align-items: center;
+    font-size: 1.5rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
@@ -832,6 +929,7 @@ input[type=checkbox] {
   }
   .texto-con-gif {
     justify-content: start;
+    margin-left: 10%;
   }
   .preview {
     display: flex;
@@ -849,6 +947,7 @@ input[type=checkbox] {
   }
   .preview-descripcion {
     font-size: 1.5rem;
+    line-height: 120%;
   }
   .nota-periodistica {
     flex-direction: row;
@@ -858,44 +957,48 @@ input[type=checkbox] {
     justify-content: center;
   }
   .nota-periodistica div {
+    justify-content: center;
+    align-items: center;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
     margin: 0 2.5%;
     /* "& > *" Aplica estilos a todos los hijos de este mixin. Va a tener un margen de 5% entre los dos costados
     por eso sus hijos deberian ocupar el 95% del contenedor. */
-    justify-content: center;
-    align-items: center;
   }
   .nota-periodistica div > * {
     max-width: 95%;
+  }
+  .nota-periodistica div img {
+    margin: 0;
+    height: auto;
+    width: 95%;
   }
   .nota-periodistica p {
     font-size: 1.8rem;
     margin: 2% 5%;
   }
-  .nota-periodistica img {
-    margin: 0;
-    height: 30rem;
-  }
   .producto {
-    flex-direction: row;
+    margin: 0 auto;
+    height: 30rem;
+    width: 90%;
   }
-  .producto h2 {
-    border-top-left-radius: 0px;
-  }
-  .producto p {
-    font-size: 1.8rem;
-    border-bottom-left-radius: 0px;
-  }
-  .producto-logo {
+  .producto .producto-logo {
     width: 100%;
     padding: 0;
     border-top-right-radius: 0px;
   }
-  .producto-logo img {
+  .producto .producto-logo img {
     margin-top: 2.5%;
     max-height: 35vh;
+  }
+  .producto .producto-descripcion h2 {
+    border-top-left-radius: 0px;
+  }
+  .producto .producto-descripcion p {
+    font-size: 1.8rem;
+    border-bottom-left-radius: 0px;
+    line-height: 150%;
   }
   .informacion {
     display: grid;
@@ -910,6 +1013,7 @@ input[type=checkbox] {
   .informacion iframe,
   .informacion table {
     max-height: 40vh;
+    width: 90%;
   }
   .seccion-dividida {
     display: grid;

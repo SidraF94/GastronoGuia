@@ -52,7 +52,7 @@
     width: 95%;
 
     img {
-        width: 70vw;
+        width: 60vw;
         /* Height auto para que no se deforme la imagen */
         height: auto;
         margin-top: 10px;
@@ -63,7 +63,7 @@
 
 .contenido-noticia {
     h3 {
-        font-size: $tamanio-fuente-md;
+        font-size: $tamanio-fuente-sm;
         margin: 2%;
     }
 
@@ -72,3 +72,4 @@
         font-size: $tamanio-fuente-sm;
     }
 }
+

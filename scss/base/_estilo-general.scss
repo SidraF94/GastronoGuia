@@ -9,11 +9,12 @@ body {
     background: url(../assets/imagenes/background-body.png);
     background-size: cover;
     background-attachment: fixed;
-    min-height: 100vh;
+    /* 120 vh de altura al body para que funcionen las animaciones de  AOS que no entran en el viewport.*/
+    min-height: 120vh;
 }
 
 h2 {
-    font-size: $tamanio-fuente-lg;
+    font-size: $tamanio-fuente-md;
     color: $color-fuente;
     margin-left: 2.5%;
     padding-top: $padding-md;
@@ -21,7 +22,7 @@ h2 {
 
 h3 {
     color: $color-fuente;
-    font-size: $tamanio-fuente-lg;
+    font-size: $tamanio-fuente-md;
     margin-left: 2.5%;
     margin-top: 4.5vh;
 }

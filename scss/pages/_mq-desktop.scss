@@ -2,7 +2,11 @@
 @use "../abstracts/mixin" as mixin;
 
 
-@media (min-width: 1025px) {
+@media (min-width: 1200px) {
+
+  main {
+    padding: 0;
+  }
 
   /* Clase creada especificamente para pantallas grandes. */
   .logo-desktop {
@@ -17,7 +21,7 @@
   }
 
   .navbar-brand img {
-    height: 20vh;
+    height: 18vh;
     /* transform translate x o y para moverlo ligeramente por cuestiones esteticas sin tocar la imagen.
       Averiguar si existe otra forma */
     transform: translateY(1vh);
@@ -28,21 +32,24 @@
   .navbar-nav {
     flex-wrap: wrap;
     gap: 1rem;
+
     .nav-item {
       flex: 1 1 auto;
     }
+
     a {
-    margin-top: 2.5%;
-    font-size: $tamanio-fuente-lg;
+      margin-top: 2.5%;
+      font-size: $tamanio-fuente-lg;
+    }
   }
-  }
+
   .catalogo {
     /* 4 columnas en pantallas grandes */
     grid-template-columns: repeat(4, 1fr);
 
     a {
       /* Aumenta la altura para pantallas más grandes */
-      height: 250px;
+      height: 25vh;
     }
   }
 
@@ -51,59 +58,77 @@
   }
 
   h3 {
-    font-size: $tamanio-fuente-xxlg;
+    font-size: $tamanio-fuente-xlg;
     margin-left: 2.5%;
     margin-top: 2.5vh;
   }
 
-  iframe {
-    width: 95%;
-    height: 50vh;
-    margin: 0;
-  }
-
   .caja-index {
     @include mixin.grid-dos-columnas;
-  }
 
-  .pagina-principal {
-    flex: 1;
-  }
+    .pagina-principal {
+      flex: 1;
+      border-bottom: 5px double $color-primario;
+    }
 
-  .noticia {
-    flex-direction: row;
-    padding: 2%;
+    .noticia {
+      flex-direction: row;
+      padding: 2%;
+      border-top: 5px solid $color-primario;
 
-    img {
-      width: 30%;
-      height: auto;
-      margin-right: 20px;
-      margin-top: 0;
+      .contenido-noticia {
+        h3 {
+          font-size: $tamanio-fuente-lg;
+        }
+
+        p {
+          display: block;
+          line-height: 130%;
+
+
+
+        }
+      }
+
+      img {
+        width: 80%;
+        height: auto;
+        margin-right: 20px;
+        margin-top: 0;
+      }
+    }
+
+    iframe {
+      width: 80%;
+      height: 50vh;
+      margin: 0;
     }
   }
 
-  .contenido-noticia h3,
-  .contenido-noticia p {
-    font-size: $tamanio-fuente-md;
-  }
+
+
 
   footer {
     flex-direction: row;
     justify-content: space-around;
+    font-size: $tamanio-fuente-md;
   }
 
   .formulario {
-    max-width: 60%;
+    max-width: 70%;
     align-items: center;
+    font-size: $tamanio-fuente-md;
     @include mixin.grid-dos-columnas;
   }
 
   .texto-con-gif {
     justify-content: start;
+    margin-left: 10%;
   }
 
   .preview {
     display: flex;
+
   }
 
   .preview-caja {
@@ -122,6 +147,7 @@
 
   .preview-descripcion {
     font-size: $tamanio-fuente-md;
+    line-height: 120%;
   }
 
   .nota-periodistica {
@@ -130,48 +156,54 @@
     display: block;
     margin: auto 0;
     justify-content: center;
-    
 
     div {
-      @include mixin.grid-dos-columnas;
       justify-content: center;
       align-items: center;
+      @include mixin.grid-dos-columnas;
+      img {
+        margin: 0;
+        height: auto;
+        width: 95%;
+      }
     }
 
     p {
       font-size: $tamanio-fuente-lg;
       margin: 2% 5%;
     }
-
-    img {
-      margin: 0;
-      height: 30rem;
-    }
   }
+
+
 
   .producto {
-    flex-direction: row;
+    margin: 0 auto;
+    height: 30rem;
+    width: 90%;
 
-    h2 {
-      border-top-left-radius: 0px;
+    .producto-logo {
+      width: 100%;
+      padding: 0;
+      border-top-right-radius: 0px;
+      img {
+        margin-top: 2.5%;
+        max-height: 35vh;
+      }
     }
 
-    p {
-      font-size: $tamanio-fuente-lg;
-      border-bottom-left-radius: 0px;
+    .producto-descripcion {
+      h2 {
+        border-top-left-radius: 0px;
+      }
+  
+      p {
+        font-size: $tamanio-fuente-lg;
+        border-bottom-left-radius: 0px;
+        line-height: 150%;
+      }
     }
   }
 
-  .producto-logo {
-    width: 100%;
-    padding: 0;
-    border-top-right-radius: 0px;
-
-    img {
-      margin-top: 2.5%;
-      max-height: 35vh;
-    }
-  }
 
   .informacion {
     display: grid;
@@ -187,6 +219,7 @@
     iframe,
     table {
       max-height: 40vh;
+      width: 90%;
     }
   }
 
