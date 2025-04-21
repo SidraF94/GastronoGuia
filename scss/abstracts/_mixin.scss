@@ -16,9 +16,10 @@
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
   margin: 0 2.5%;
+
   /* "& > *" Aplica estilos a todos los hijos de este mixin. Va a tener un margen de 5% entre los dos costados
   por eso sus hijos deberian ocupar el 95% del contenedor. */
-  & > * {
+  &>* {
     max-width: 95%;
   }
 }

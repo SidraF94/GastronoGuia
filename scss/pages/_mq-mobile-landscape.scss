@@ -1,6 +1,8 @@
 @use "../abstracts/mixin" as mixin;
 @use "../abstracts/variables" as *;
 
+
+/* Estilos para mobile en landscape/apaisado. */
 @media (orientation: landscape) {
 
     main {
@@ -26,17 +28,17 @@
         width: 70%;
         margin: 2.5%;
         margin: 2% auto;
-
     }
 
     .caja-index {
         display: grid;
         grid-template-columns: 1fr 2fr;
+
         iframe {
             width: 80%;
             height: auto;
-            
         }
+
         .noticia {
             margin: 1%;
             display: grid;
@@ -44,54 +46,60 @@
             line-height: 110%;
             height: 20vh;
             border: none;
+
             .contenido-noticia {
                 h3 {
                     font-size: $tamanio-fuente-sm;
                     overflow: hidden;
                 }
+
                 p {
                     display: none;
                 }
             }
-         
+
             img {
                 width: 15vw;
                 margin-right: 2vw;
             }
         }
-    
+
     }
 
-    
+
     .formulario {
         padding: 0 10%;
     }
 
-    .preview-caja {
-        flex-direction: row;
+    .preview {
+        .preview-caja {
+            flex-direction: row;
 
-        .preview-imagen {
-            height: 100%;
-            width: 25%;
-            object-fit: center;
-        }
+            .preview-imagen {
+                height: 100%;
+                width: 25%;
+                object-fit: center;
+            }
 
-        .preview-texto {
-            line-height: 120%;
-            margin-left: 2.5vw;
+            .preview-texto {
+                line-height: 120%;
+                margin-left: 2.5vw;
+            }
         }
     }
 
-
     .producto {
         flex-direction: row;
+
         .producto-logo {
             flex: 2;
             height: 50vh;
+
             .logo {
                 height: 30vh;
             }
         }
+
         .producto-descripcion {
             line-height: 120%;
         }
@@ -103,10 +111,10 @@
                 width: 70%;
             }
         }
-       
     }
 
-   
-
-
+    /* Clase carousel de Bootstrap. En mobile landscape no aparece. */
+    .carousel {
+        display: none;
+    }
 }

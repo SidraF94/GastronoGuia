@@ -9,34 +9,92 @@
   font-family: sans-serif;
   margin: 5% 0;
 
-  p {
+  input[type="checkbox"] {
+    display: none;
+    ;
+  }
+
+  /* Botón simulando click */
+  .toggle-libro {
+    margin-bottom: 20px;
+    padding: 10px 15px;
+    font-size: 1.2rem;
+    /* Fondo animado de boton con linear-gradient. Aplicado automaticamente con @keyframes. */
+    background: linear-gradient(270deg, #f5d776, #d4af37, #f5d776);
+    background-size: 200% 200%;
+    /* Duración de la animacion y tipo de aceleración.  */
+    animation: fondo-dorado 6s ease infinite;
     color: black;
-    font-size: $tamanio-fuente-sm;
-    text-align: center;
-    line-height: 95%;
-  
+    border: none;
+    /* Cursor para que se note que es un botón. */
+    cursor: pointer;
+    border-radius: 8px;
+    font-family: 'Kaushan Script', cursive;
+  }
+
+  .libro {
+    position: relative;
+    width: 80vw;
+    height: 90vh;
+    perspective: 1800px;
+
+    .pagina {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border: 7px inset darkgoldenrod;
+      transform-origin: left;
+      transition: transform 2s linear;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      background-image: url(../assets/imagenes/tapa-libro.jpg);
+      background-size: cover;
+      display: flex;
+
+      img {
+        width: 100%;
+        max-height: auto;
+        justify-self: center;
+        object-fit: contain;
+        filter: brightness(1.5);
+        transition: opacity 0.5s linear 1s;
+        /* Espera 1 segundo para ocultar. */
+      }
+    }
+
+    .contenido {
+      display: grid;
+      overflow: auto;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      padding: 20px;
+      box-sizing: border-box;
+      z-index: -1;
+      background-image: url(../assets/imagenes/hoja-papel.jpg);
+      background-size: cover;
+      background-position: center;
+      border-left: 10px inset rgba(234, 225, 206, 0.7);
+      border: 5px double rgba(234, 225, 206, 0.7);
+
+      //Efecto similar a si fueran hojas del libro. 
+      box-shadow:
+        0 -2px 10px -2px rgba(234, 225, 206, 0.7),
+        0 -4px 12px -3px rgba(212, 200, 180, 0.7),
+        0 -6px 15px -4px rgba(191, 177, 158, 0.7),
+        2px 0 10px -2px rgba(234, 225, 206, 0.7),
+        4px 0 12px -3px rgba(212, 200, 180, 0.7),
+        6px 0 15px -4px rgba(191, 177, 158, 0.7);
+
+      p {
+        color: black;
+        font-size: $tamanio-fuente-sm;
+        text-align: center;
+        line-height: 95%;
+
+      }
+    }
   }
 }
-
-
-/* Botón simulando click */
-.toggle-libro {
-  margin-bottom: 20px;
-  padding: 10px 15px;
-  font-size: 1.2rem;
-  /* Fondo animado de boton con linear-gradient. Aplicado automaticamente con @keyframes. */
-  background: linear-gradient(270deg, #f5d776, #d4af37, #f5d776);
-  background-size: 200% 200%;
-  /* Duración de la animacion y tipo de aceleración.  */
-  animation: fondo-dorado 6s ease infinite;
-  color: black;
-  border: none;
-  /* Cursor para que se note que es un botón. */
-  cursor: pointer;
-  border-radius: 8px;
-  font-family: 'Kaushan Script', cursive;
-}
-
 
 @keyframes fondo-dorado {
   0% {
@@ -51,67 +109,6 @@
     background-position: 0% 50%;
   }
 }
-
-input[type="checkbox"] {
-  display: none;
-  ;
-}
-
-.libro {
-  position: relative;
-  width: 80vw;
-  height: 90vh;
-  perspective: 1800px;
-}
-
-.pagina {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border: 7px inset darkgoldenrod;
-  transform-origin: left;
-  transition: transform 2s linear;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  background-image: url(../assets/imagenes/tapa-libro.jpg);
-  background-size: cover;
-  display: flex;
-
-  img {
-    width: 100%;
-    max-height: auto;
-    justify-self: center;
-    object-fit: contain;
-    filter: brightness(1.5);
-    transition: opacity 0.5s linear 1s;
-    /* Espera 1 segundo para ocultar. */
-  }
-}
-
-.contenido {
-  display: grid;
-  overflow: auto;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  padding: 20px;
-  box-sizing: border-box;
-  z-index: -1;
-  background-image: url(../assets/imagenes/hoja-papel.jpg);
-  background-size: cover;
-  background-position: center;
-  border-left: 10px inset rgba(234, 225, 206, 0.7);
-  border: 5px double rgba(234, 225, 206, 0.7);
-
-  //Efecto similar a si fueran hojas del libro. 
-  box-shadow:
-    0 -2px 10px -2px rgba(234, 225, 206, 0.7),
-    0 -4px 12px -3px rgba(212, 200, 180, 0.7),
-    0 -6px 15px -4px rgba(191, 177, 158, 0.7),
-    2px 0 10px -2px rgba(234, 225, 206, 0.7),
-    4px 0 12px -3px rgba(212, 200, 180, 0.7),
-    6px 0 15px -4px rgba(191, 177, 158, 0.7);
-}
-
 
 /* Cuando está marcado el checkbox la pagina aplica transform: rotate  y transition: opacity a la imagen.  */
 /* El selector "+" es para cada elemento hermano, es decir elementos en el mismo nivel. */

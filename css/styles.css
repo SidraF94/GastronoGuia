@@ -7,13 +7,12 @@
 
 /* Estilos generales de todas las paginas. */
 body {
-  /* Fuente de Google fonts para todo el sitio */
+  /* Fuente de Google fonts para todo el sitio: Oswald */
   font-family: "Oswald";
   background: url(../assets/imagenes/background-body.png);
   background-size: cover;
   background-attachment: fixed;
-  /* 120 vh de altura al body para que funcionen las animaciones de  AOS que no entran en el viewport.*/
-  min-height: 120vh;
+  min-height: 100vh;
 }
 
 h2 {
@@ -122,7 +121,6 @@ footer {
   padding: 5px;
   margin-top: 2%;
 }
-
 footer a {
   margin: 0;
   justify-content: space-around;
@@ -149,7 +147,7 @@ footer a {
   overflow: hidden;
   /* Evita desbordes de imágenes grandes */
 }
-.catalogo img {
+.catalogo a img {
   width: 100%;
   height: 100%;
   /* Recorta imágenes manteniendo la proporción. */
@@ -168,12 +166,19 @@ footer a {
 .noticia {
   display: flex;
   flex-direction: column;
-  /* Alternativa etiqueta <hr> */
   border-top: 2px solid #690202;
   border-bottom: 2px solid #690202;
   padding: 5px;
   margin: 0 2.5%;
   width: 95%;
+}
+.noticia .contenido-noticia h3 {
+  font-size: 1.2rem;
+  margin: 2%;
+}
+.noticia .contenido-noticia p {
+  color: antiquewhite;
+  font-size: 1.2rem;
 }
 .noticia img {
   width: 60vw;
@@ -183,15 +188,6 @@ footer a {
   align-self: center;
   border-radius: 5px;
   border: 2.5px solid #690202;
-}
-
-.contenido-noticia h3 {
-  font-size: 1.2rem;
-  margin: 2%;
-}
-.contenido-noticia p {
-  color: antiquewhite;
-  font-size: 1.2rem;
 }
 
 .formulario {
@@ -206,12 +202,12 @@ footer a {
   gap: 10px;
 }
 .formulario label {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 .formulario input,
 .formulario select,
 .formulario textarea {
-  margin: 5px;
+  margin: 0.2rem;
   padding: 10px;
   border-radius: 5px;
   border: 2.5px solid #690202;
@@ -228,7 +224,7 @@ footer a {
 }
 .formulario input[type=submit]:hover {
   /* cambiar de color (más oscuro al pasar el mouse) */
-  background-color: rgb(54.953271028, 1.046728972, 1.046728972);
+  background-color: rgb(79.976635514, 1.523364486, 1.523364486);
 }
 
 .texto-con-gif {
@@ -258,8 +254,7 @@ serian como tarjetas con enlaces a sus respectivas paginas. */
   border-bottom: 2px solid #690202;
   padding: 15px 0;
 }
-
-.preview-caja {
+.preview .preview-caja {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -267,8 +262,7 @@ serian como tarjetas con enlaces a sus respectivas paginas. */
   padding: 0 2vh;
   text-align: center;
 }
-
-.preview-imagen {
+.preview .preview-caja .preview-imagen {
   flex: 1;
   object-fit: cover;
   align-items: center;
@@ -280,21 +274,17 @@ serian como tarjetas con enlaces a sus respectivas paginas. */
   max-height: 20vh;
   width: 70%;
 }
-
-.preview-texto {
+.preview .preview-caja .preview-texto {
   /* Solución para que el texto ocupe toda la caja en una proporcion 1 a 2. */
   flex: 2;
 }
-
-.preview-titulo {
+.preview .preview-caja .preview-texto .preview-titulo {
   margin: 0;
   font-size: 1.2rem;
   color: white;
 }
-
-.preview-descripcion {
+.preview .preview-caja .preview-texto .preview-descripcion {
   font-size: 1.2rem;
-  /* Ajustar color */
   color: antiquewhite;
 }
 
@@ -305,7 +295,10 @@ serian como tarjetas con enlaces a sus respectivas paginas. */
   margin: 2.5%;
   width: 95%;
 }
-.nota-periodistica img {
+.nota-periodistica p {
+  font-size: 1.2rem;
+}
+.nota-periodistica div img {
   border-radius: 5px;
   border: 2.5px solid #690202;
   width: 90vw;
@@ -313,14 +306,13 @@ serian como tarjetas con enlaces a sus respectivas paginas. */
   display: block;
   margin: 0 auto;
 }
-.nota-periodistica p {
+.nota-periodistica div p {
   flex: 1;
   /* Usar display flex aunque la clase nota-periodistica tenga display flex para que funcione en sus elementos "hijos" */
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: justify;
-  margin: 2%;
   font-size: 1.2rem;
 }
 
@@ -330,9 +322,36 @@ serian como tarjetas con enlaces a sus respectivas paginas. */
   flex-direction: column;
   margin: 2.5%;
   text-align: center;
+}
+.producto .producto-logo {
+  flex: 1;
+  width: 100%;
+  border-radius: 5px;
+  border: 2.5px solid #690202;
+  background-color: #690202;
+  padding-top: 2.5vh;
+}
+.producto .producto-logo div .logo {
+  height: 20vh;
+  object-fit: cover;
+  width: 70%;
+}
+.producto .producto-logo address {
+  /* Se aplica a los iconos de E-mail, telefono y Instagram. */
+  display: flex;
+  justify-content: space-around;
+  padding-top: 5%;
+}
+.producto .producto-logo address a img {
+  height: 5vh;
+  /* Con filter: invert cambiamos los iconos negros por blancos con el valor 1 */
+  filter: invert(1);
+}
+.producto .producto-descripcion {
+  flex: 4;
   /* Los border-radius varian segun el tipo de pantalla. */
 }
-.producto h2 {
+.producto .producto-descripcion h2 {
   color: white;
   padding: 5px;
   background-color: #690202;
@@ -341,8 +360,9 @@ serian como tarjetas con enlaces a sus respectivas paginas. */
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
 }
-.producto p {
+.producto .producto-descripcion p {
   font-size: 1.2rem;
+  line-height: 120%;
   color: #690202;
   background-color: #ffcc00;
   padding: 10px;
@@ -355,54 +375,12 @@ serian como tarjetas con enlaces a sus respectivas paginas. */
   display: flex;
 }
 
-.producto-logo {
-  flex: 1;
-  width: 100%;
-  border-radius: 5px;
-  border: 2.5px solid #690202;
-  background-color: #690202;
-  padding-top: 2.5vh;
-}
-.producto-logo img {
-  max-width: 60%;
-  margin: 0 10%;
-}
-
-.producto-descripcion {
-  flex: 4;
-}
-
-.logo {
-  height: 20vh;
-  object-fit: cover;
-  width: 90%;
-}
-
 .informacion {
   display: grid;
   grid-template-columns: 1fr;
   justify-items: space-around;
   margin: 2.5%;
   border-top: 10px double #690202;
-}
-.informacion img {
-  width: 25%;
-  max-height: 30vh;
-  object-fit: cover;
-  border-radius: 5px;
-  border: 2.5px solid #690202;
-}
-
-address {
-  /* Se aplica a los iconos de E-mail, telefono y Instagram. */
-  display: flex;
-  justify-content: space-around;
-  padding-top: 5%;
-}
-address a img {
-  height: 8vh;
-  /* Con filter: invert cambiamos los iconos negros por blancos con el valor 1 */
-  filter: invert(1);
 }
 
 .about-us {
@@ -413,16 +391,12 @@ address a img {
   height: 80vh;
   font-family: sans-serif;
   margin: 5% 0;
+  /* Botón simulando click */
 }
-.about-us p {
-  color: black;
-  font-size: 1.2rem;
-  text-align: center;
-  line-height: 95%;
+.about-us input[type=checkbox] {
+  display: none;
 }
-
-/* Botón simulando click */
-.toggle-libro {
+.about-us .toggle-libro {
   margin-bottom: 20px;
   padding: 10px 15px;
   font-size: 1.2rem;
@@ -438,30 +412,13 @@ address a img {
   border-radius: 8px;
   font-family: "Kaushan Script", cursive;
 }
-
-@keyframes fondo-dorado {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-input[type=checkbox] {
-  display: none;
-}
-
-.libro {
+.about-us .libro {
   position: relative;
   width: 80vw;
   height: 90vh;
   perspective: 1800px;
 }
-
-.pagina {
+.about-us .libro .pagina {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -473,7 +430,7 @@ input[type=checkbox] {
   background-size: cover;
   display: flex;
 }
-.pagina img {
+.about-us .libro .pagina img {
   width: 100%;
   max-height: auto;
   justify-self: center;
@@ -482,8 +439,7 @@ input[type=checkbox] {
   transition: opacity 0.5s linear 1s;
   /* Espera 1 segundo para ocultar. */
 }
-
-.contenido {
+.about-us .libro .contenido {
   display: grid;
   overflow: auto;
   position: absolute;
@@ -499,7 +455,24 @@ input[type=checkbox] {
   border: 5px double rgba(234, 225, 206, 0.7);
   box-shadow: 0 -2px 10px -2px rgba(234, 225, 206, 0.7), 0 -4px 12px -3px rgba(212, 200, 180, 0.7), 0 -6px 15px -4px rgba(191, 177, 158, 0.7), 2px 0 10px -2px rgba(234, 225, 206, 0.7), 4px 0 12px -3px rgba(212, 200, 180, 0.7), 6px 0 15px -4px rgba(191, 177, 158, 0.7);
 }
+.about-us .libro .contenido p {
+  color: black;
+  font-size: 1.2rem;
+  text-align: center;
+  line-height: 95%;
+}
 
+@keyframes fondo-dorado {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 /* Cuando está marcado el checkbox la pagina aplica transform: rotate  y transition: opacity a la imagen.  */
 /* El selector "+" es para cada elemento hermano, es decir elementos en el mismo nivel. */
 #abrir-libro:checked + label + .libro .pagina {
@@ -512,6 +485,7 @@ input[type=checkbox] {
   /* Se oculta rápido */
 }
 
+/* Estilos para mobile en landscape/apaisado. */
 @media (orientation: landscape) {
   main {
     padding: 0 5%;
@@ -563,15 +537,15 @@ input[type=checkbox] {
   .formulario {
     padding: 0 10%;
   }
-  .preview-caja {
+  .preview .preview-caja {
     flex-direction: row;
   }
-  .preview-caja .preview-imagen {
+  .preview .preview-caja .preview-imagen {
     height: 100%;
     width: 25%;
     object-fit: center;
   }
-  .preview-caja .preview-texto {
+  .preview .preview-caja .preview-texto {
     line-height: 120%;
     margin-left: 2.5vw;
   }
@@ -590,6 +564,10 @@ input[type=checkbox] {
   }
   .nota-periodistica div img {
     width: 70%;
+  }
+  /* Clase carousel de Bootstrap. En mobile landscape no aparece. */
+  .carousel {
+    display: none;
   }
 }
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
@@ -646,30 +624,51 @@ input[type=checkbox] {
   .preview-caja > * {
     max-width: 95%;
   }
-  .preview-imagen {
+  .preview-caja .preview-imagen {
     height: 25vh;
     width: 85%;
   }
-  .preview-titulo {
+  .preview-caja .preview-texto .preview-titulo {
     font-size: 1.5rem;
   }
   .nota-periodistica p {
     font-size: 1.5rem;
   }
-  .nota-periodistica img {
+  .nota-periodistica div p {
+    font-size: 1.5rem;
+  }
+  .nota-periodistica div img {
     width: 80vw;
   }
-  .producto p {
-    font-size: 1.2rem;
-  }
-  .producto-logo {
-    width: 100%;
+  .producto .producto-logo {
+    width: 70%;
     align-self: center;
   }
-  .about-us p {
+  .producto .producto-descripcion p {
+    font-size: 1.5rem;
+  }
+  .about-us .libro .contenido p {
     font-size: 1.8rem;
   }
 }
+/* Clase carousel de Bootstrap. */
+.carousel {
+  width: 100%;
+  max-height: 35vh;
+  overflow: hidden;
+}
+
+.carousel-inner,
+.carousel-item,
+.carousel-item img {
+  width: 100%;
+}
+
+.carousel-item img {
+  object-fit: cover;
+}
+
+/* Estilos para tablet con orientación  */
 @media (min-width: 768px) and (max-width: 1200px) and (orientation: landscape) {
   main {
     padding: 0 5%;
@@ -706,26 +705,29 @@ input[type=checkbox] {
   .caja-index > * {
     max-width: 95%;
   }
-  .noticia {
+  .caja-index iframe {
+    height: 40vh;
+  }
+  .caja-index .noticia {
     flex-direction: row;
-    height: 20vh;
+    height: 15vh;
+    align-items: center;
+    border-bottom: 5px solid #690202;
   }
-  .noticia img {
-    width: 90%;
-    height: auto;
-    margin-right: 20px;
-    margin-top: 0;
-  }
-  .contenido-noticia {
+  .caja-index .noticia .contenido-noticia {
     overflow: hidden;
     text-overflow: ellipsis;
   }
-  .contenido-noticia h3 {
+  .caja-index .noticia .contenido-noticia h3 {
     font-size: 1.2rem;
   }
-  .contenido-noticia p {
+  .caja-index .noticia .contenido-noticia p {
     font-size: 1.2rem;
     display: none;
+  }
+  .caja-index .noticia img {
+    width: 90%;
+    height: auto;
   }
   footer {
     flex-direction: row;
@@ -743,7 +745,7 @@ input[type=checkbox] {
     max-width: 95%;
   }
   .preview {
-    height: 30vh;
+    height: 20vh;
     overflow: hidden;
     justify-content: center;
   }
@@ -751,10 +753,17 @@ input[type=checkbox] {
     flex-direction: row;
     text-align: left;
   }
-  .preview .preview-imagen {
-    height: 18vh;
-    width: 30%;
+  .preview .preview-caja .preview-imagen {
+    flex: 1;
+    height: 15vh;
+    width: 40%;
     margin-right: 5%;
+  }
+  .preview .preview-caja .preview-texto {
+    flex: 2;
+  }
+  .preview .preview-caja .preview-texto .preview-descripcion {
+    display: none;
   }
   .about-us p {
     font-size: 1.8rem;
@@ -771,30 +780,32 @@ input[type=checkbox] {
     flex-direction: row;
     flex-wrap: wrap;
     display: block;
-    margin: auto 0;
     justify-content: center;
-    margin: 0 auto;
-  }
-  .nota-periodistica div {
-    justify-content: center;
-    align-items: center;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    margin: 0 2.5%;
-    /* "& > *" Aplica estilos a todos los hijos de este mixin. Va a tener un margen de 5% entre los dos costados
-    por eso sus hijos deberian ocupar el 95% del contenedor. */
-  }
-  .nota-periodistica div > * {
-    max-width: 95%;
   }
   .nota-periodistica p {
-    font-size: 1.2rem;
-    margin: 2% 5%;
+    font-size: 1.5rem;
   }
-  .nota-periodistica img {
-    margin: 0;
-    height: 20rem;
+  .nota-periodistica div {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: 1fr;
+  }
+  .nota-periodistica div p {
+    font-size: 1.5rem;
+  }
+  .nota-periodistica div img {
+    margin: 0 auto;
+    height: 40vh;
+  }
+  .about-us .libro {
+    width: 60%;
+  }
+  .about-us .libro .contenido p {
+    font-size: 1.5rem;
+  }
+  .formulario {
+    margin: 0 auto;
   }
   .producto {
     display: grid;
@@ -808,8 +819,14 @@ input[type=checkbox] {
     max-width: 95%;
   }
   .producto .producto-logo {
-    height: 45vh;
+    height: 40vh;
     width: 90%;
+  }
+  .producto .producto-logo div .logo {
+    width: 60%;
+  }
+  .producto .producto-logo address a img {
+    height: 5vh;
   }
   .informacion {
     display: grid;
@@ -819,6 +836,22 @@ input[type=checkbox] {
   .informacion iframe {
     height: 30vh;
     margin: 0 auto;
+  }
+  /* Clase carousel de Bootstrap. */
+  .carousel {
+    display: block;
+    width: 100%;
+    height: 30vh;
+    overflow: hidden;
+  }
+  .carousel-inner,
+  .carousel-item,
+  .carousel-item img {
+    width: 100%;
+    height: 100%;
+  }
+  .carousel-item img {
+    object-fit: cover;
   }
 }
 @media (min-width: 1200px) {
@@ -898,15 +931,14 @@ input[type=checkbox] {
     line-height: 130%;
   }
   .caja-index .noticia img {
-    width: 80%;
-    height: auto;
-    margin-right: 20px;
+    width: 90%;
+    height: 90%;
+    margin-right: 1rem;
     margin-top: 0;
   }
   .caja-index iframe {
     width: 80%;
-    height: 50vh;
-    margin: 0;
+    height: 80%;
   }
   footer {
     flex-direction: row;
@@ -934,18 +966,21 @@ input[type=checkbox] {
   .preview {
     display: flex;
   }
-  .preview-caja {
+  .preview .preview-caja {
     flex-direction: row;
   }
-  .preview-imagen {
+  .preview .preview-caja .preview-imagen {
     flex: 1;
     margin: 0 2.5%;
-    height: 18vh;
+    height: 16vh;
   }
-  .preview-titulo {
+  .preview .preview-caja .preview-texto {
+    flex: 2;
+  }
+  .preview .preview-caja .preview-texto .preview-titulo {
     font-size: 1.8rem;
   }
-  .preview-descripcion {
+  .preview .preview-caja .preview-texto .preview-descripcion {
     font-size: 1.5rem;
     line-height: 120%;
   }
@@ -953,12 +988,15 @@ input[type=checkbox] {
     flex-direction: row;
     flex-wrap: wrap;
     display: block;
-    margin: auto 0;
     justify-content: center;
+  }
+  .nota-periodistica p {
+    font-size: 1.8rem;
   }
   .nota-periodistica div {
     justify-content: center;
     align-items: center;
+    margin: auto 0;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
@@ -968,6 +1006,9 @@ input[type=checkbox] {
   }
   .nota-periodistica div > * {
     max-width: 95%;
+  }
+  .nota-periodistica div p {
+    font-size: 1.8rem;
   }
   .nota-periodistica div img {
     margin: 0;
@@ -980,17 +1021,20 @@ input[type=checkbox] {
   }
   .producto {
     margin: 0 auto;
-    height: 30rem;
+    height: 50vh;
     width: 90%;
   }
   .producto .producto-logo {
-    width: 100%;
     padding: 0;
     border-top-right-radius: 0px;
   }
-  .producto .producto-logo img {
-    margin-top: 2.5%;
-    max-height: 35vh;
+  .producto .producto-logo div .logo {
+    height: 25vh;
+    margin-top: 3%;
+    width: 70%;
+  }
+  .producto .producto-logo address a img {
+    height: 5vh;
   }
   .producto .producto-descripcion h2 {
     border-top-left-radius: 0px;
@@ -1002,18 +1046,29 @@ input[type=checkbox] {
   }
   .informacion {
     display: grid;
-    grid-template-columns: 1.2fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     justify-items: center;
+    height: 40vh;
   }
-  .informacion img {
-    margin: 0 2.5%;
+  .informacion iframe {
+    height: 40vh;
     width: 95%;
   }
-  .informacion img,
-  .informacion iframe,
-  .informacion table {
-    max-height: 40vh;
-    width: 90%;
+  /* Clase carousel de Bootstrap. */
+  .carousel {
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+  .carousel-inner,
+  .carousel-item,
+  .carousel-item img {
+    width: 95%;
+    height: 99.99%;
+  }
+  .carousel-item img {
+    object-fit: cover;
   }
   .seccion-dividida {
     display: grid;
@@ -1030,10 +1085,7 @@ input[type=checkbox] {
     height: 90vh;
     margin: 0;
   }
-  .about-us p {
-    font-size: 2.5rem;
-  }
-  .about-us label {
+  .about-us .toggle-libro {
     height: 10vh;
     width: 18vw;
     text-align: center;
@@ -1041,9 +1093,12 @@ input[type=checkbox] {
     align-items: center;
     font-size: 2.5rem;
   }
-  .libro {
+  .about-us .libro {
     width: 50vw;
     height: 80vh;
+  }
+  .about-us .libro .contenido p {
+    font-size: 2.5rem;
   }
 }
 

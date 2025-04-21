@@ -27,8 +27,6 @@
     transform: translateY(1vh);
   }
 
-
-
   .navbar-nav {
     flex-wrap: wrap;
     gap: 1rem;
@@ -84,29 +82,22 @@
         p {
           display: block;
           line-height: 130%;
-
-
-
         }
       }
 
       img {
-        width: 80%;
-        height: auto;
-        margin-right: 20px;
+        width: 90%;
+        height: 90%;
+        margin-right: 1rem;
         margin-top: 0;
       }
     }
 
     iframe {
       width: 80%;
-      height: 50vh;
-      margin: 0;
+      height: 80%;
     }
   }
-
-
-
 
   footer {
     flex-direction: row;
@@ -129,38 +120,50 @@
   .preview {
     display: flex;
 
-  }
+    .preview-caja {
+      flex-direction: row;
 
-  .preview-caja {
-    flex-direction: row;
-  }
+      .preview-imagen {
+        flex: 1;
+        margin: 0 2.5%;
+        height: 16vh;
+      }
 
-  .preview-imagen {
-    flex: 1;
-    margin: 0 2.5%;
-    height: 18vh;
-  }
+      .preview-texto {
+        flex: 2;
 
-  .preview-titulo {
-    font-size: $tamanio-fuente-lg;
-  }
+        .preview-titulo {
+          font-size: $tamanio-fuente-lg;
+        }
 
-  .preview-descripcion {
-    font-size: $tamanio-fuente-md;
-    line-height: 120%;
+        .preview-descripcion {
+          font-size: $tamanio-fuente-md;
+          line-height: 120%;
+        }
+      }
+    }
   }
 
   .nota-periodistica {
     flex-direction: row;
     flex-wrap: wrap;
     display: block;
-    margin: auto 0;
     justify-content: center;
+
+    p {
+      font-size: $tamanio-fuente-lg;
+    }
 
     div {
       justify-content: center;
       align-items: center;
+      margin: auto 0;
       @include mixin.grid-dos-columnas;
+
+      p {
+        font-size: $tamanio-fuente-lg;
+      }
+
       img {
         margin: 0;
         height: auto;
@@ -178,16 +181,28 @@
 
   .producto {
     margin: 0 auto;
-    height: 30rem;
+    height: 50vh;
     width: 90%;
 
+
     .producto-logo {
-      width: 100%;
       padding: 0;
       border-top-right-radius: 0px;
-      img {
-        margin-top: 2.5%;
-        max-height: 35vh;
+
+      div {
+        .logo {
+          height: 25vh;
+          margin-top: 3%;
+          width: 70%;
+        }
+      }
+
+      address {
+        a {
+          img {
+            height: 5vh;
+          }
+        }
       }
     }
 
@@ -195,7 +210,7 @@
       h2 {
         border-top-left-radius: 0px;
       }
-  
+
       p {
         font-size: $tamanio-fuente-lg;
         border-bottom-left-radius: 0px;
@@ -207,20 +222,34 @@
 
   .informacion {
     display: grid;
-    grid-template-columns: 1.2fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     justify-items: center;
+    height: 40vh;
 
-    img {
-      margin: 0 2.5%;
+    iframe {
+      height: 40vh;
       width: 95%;
     }
+  }
 
-    img,
-    iframe,
-    table {
-      max-height: 40vh;
-      width: 90%;
-    }
+
+  /* Clase carousel de Bootstrap. */
+  .carousel {
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+
+  .carousel-inner,
+  .carousel-item,
+  .carousel-item img {
+    width: 95%;
+    height: 99.99%;
+  }
+
+  .carousel-item img {
+    object-fit: cover;
   }
 
   .seccion-dividida {
@@ -231,11 +260,7 @@
     height: 90vh;
     margin: 0;
 
-    p {
-      font-size: $tamanio-fuente-xlg;
-    }
-
-    label {
+    .toggle-libro {
       height: 10vh;
       width: 18vw;
       text-align: center;
@@ -243,10 +268,16 @@
       align-items: center;
       font-size: $tamanio-fuente-xlg;
     }
-  }
 
-  .libro {
-    width: 50vw;
-    height: 80vh;
+    .libro {
+      width: 50vw;
+      height: 80vh;
+
+      .contenido {
+        p {
+          font-size: $tamanio-fuente-xlg;
+        }
+      }
+    }
   }
 }

@@ -71,57 +71,84 @@
     .preview-caja {
         padding: 0;
         @include mixin.grid-dos-columnas;
-    }
 
-    .preview-imagen {
-        height: 25vh;
-        width: 85%;
-    }
+        .preview-imagen {
+            height: 25vh;
+            width: 85%;
+        }
 
-    .preview-titulo {
-        font-size: $tamanio-fuente-md;
+        .preview-texto {
+            .preview-titulo {
+                font-size: $tamanio-fuente-md;
+            }
+        }
     }
 
     .nota-periodistica {
+
         p {
             font-size: $tamanio-fuente-md ;
         }
 
-        img {
-            width: 80vw;
+        div {
+            p {
+                font-size: $tamanio-fuente-md ;
+            }
+
+            img {
+                width: 80vw;
+            }
         }
     }
 
     .producto {
-        p {
-            font-size: $tamanio-fuente-sm;
+        .producto-logo {
+            width: 70%;
+            align-self: center;
+        }
+
+        .producto-descripcion {
+            p {
+                font-size: $tamanio-fuente-md;
+            }
         }
     }
 
-    .producto-logo {
-        width: 100%;
-        align-self: center;
-    }
-
     .about-us {
-        p {
-            font-size: $tamanio-fuente-lg;
+        .libro {
+            .contenido {
+                p {
+                    font-size: $tamanio-fuente-lg;
+                }
+            }
         }
     }
 }
 
+/* Clase carousel de Bootstrap. */
+.carousel {
+    width: 100%;
+    max-height: 35vh;
+    overflow: hidden;
+}
 
+.carousel-inner,
+.carousel-item,
+.carousel-item img {
+    width: 100%;
+}
 
+.carousel-item img {
+    object-fit: cover;
+}
 
-
-
-
+/* Estilos para tablet con orientación  */
 
 @media (min-width: 768px) and (max-width: 1200px) and (orientation: landscape) {
     main {
         padding: 0 5%;
     }
-    
+
     .navbar {
         h1 {
             font-size: $tamanio-fuente-xlg;
@@ -137,7 +164,6 @@
     }
 
     iframe {
-
         height: 40vh;
         width: 100%;
     }
@@ -154,34 +180,39 @@
         grid-template-columns: 1.5fr 2fr;
         justify-content: center;
         @include mixin.grid-dos-columnas;
-        
-    }
 
-    .noticia {
-        flex-direction: row;
-        height: 20vh;
-
-        img {
-            width: 90%;
-            height: auto;
-            margin-right: 20px;
-            margin-top: 0;
-        }
-    }
-
-    .contenido-noticia {
-        overflow: hidden;
-        text-overflow: ellipsis;
-
-        h3 {
-            font-size: $tamanio-fuente-sm;
+        iframe {
+            height: 40vh;
         }
 
-        p {
-            font-size: $tamanio-fuente-sm;
-            display: none;
+        .noticia {
+            flex-direction: row;
+            height: 15vh;
+            align-items: center;
+            border-bottom: 5px solid $color-primario;
+
+            .contenido-noticia {
+                overflow: hidden;
+                text-overflow: ellipsis;
+
+                h3 {
+                    font-size: $tamanio-fuente-sm;
+                }
+
+                p {
+                    font-size: $tamanio-fuente-sm;
+                    display: none;
+                }
+            }
+
+            img {
+                width: 90%;
+                height: auto;
+            }
         }
+
     }
+
 
     footer {
         flex-direction: row;
@@ -194,20 +225,31 @@
     }
 
     .preview {
-        height: 30vh;
+        height: 20vh;
         overflow: hidden;
         justify-content: center;
 
         .preview-caja {
             flex-direction: row;
             text-align: left;
+
+            .preview-imagen {
+                flex: 1;
+                height: 15vh;
+                width: 40%;
+                margin-right: 5%;
+            }
+
+            .preview-texto {
+                flex: 2;
+
+                .preview-descripcion {
+                    display: none;
+                }
+            }
         }
 
-        .preview-imagen {
-            height: 18vh;
-            width: 30%;
-            margin-right: 5%;
-        }
+
     }
 
     .about-us {
@@ -233,60 +275,98 @@
         flex-direction: row;
         flex-wrap: wrap;
         display: block;
-        margin: auto 0;
         justify-content: center;
-        margin: 0 auto;
-
-
-        div {
-            justify-content: center;
-            align-items: center;
-            @include mixin.grid-dos-columnas;
-        }
 
         p {
-            font-size: $tamanio-fuente-sm;
-            margin: 2% 5%;
+            font-size: $tamanio-fuente-md;
         }
 
-        img {
-            margin: 0;
-            height: 20rem;
+        div {
+            display: grid;
+            align-items: center;
+            justify-content: center;
+            grid-template-columns: 1fr;
+
+            p {
+                font-size: $tamanio-fuente-md;
+            }
+
+            img {
+                margin: 0 auto;
+                height: 40vh;
+
+            }
         }
+    }
+
+    .about-us {
+        .libro {
+            width: 60%;
+
+            .contenido {
+                p {
+                    font-size: $tamanio-fuente-md
+                }
+            }
+        }
+    }
+
+    .formulario {
+        margin: 0 auto;
     }
 
     .producto {
         @include mixin.grid-dos-columnas;
+
         .producto-logo {
-            height: 45vh;
+            height: 40vh;
             width: 90%;
+
+            div {
+                .logo {
+                    width: 60%;
+                }
+            }
+
+            address {
+                a {
+                    img {
+                        height: 5vh
+                    }
+                }
+            }
         }
     }
 
     .informacion {
-       display: grid;
-       grid-template-columns: repeat(3, 1fr);
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
         border: none;
+
         iframe {
             height: 30vh;
             margin: 0 auto;
         }
     }
-    
 
+    /* Clase carousel de Bootstrap. */
+    .carousel {
+        display: block;
+        width: 100%;
+        height: 30vh;
+        overflow: hidden;
+    }
 
+    .carousel-inner,
+    .carousel-item,
+    .carousel-item img {
+        width: 100%;
+        height: 100%;
+    }
 
-
-
-
-
-
-
-
-
-
-
-
+    .carousel-item img {
+        object-fit: cover;
+    }
 }
 
 

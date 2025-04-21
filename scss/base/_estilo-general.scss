@@ -4,13 +4,12 @@
 /* Estilos generales de todas las paginas. */
 
 body {
-    /* Fuente de Google fonts para todo el sitio */
+    /* Fuente de Google fonts para todo el sitio: Oswald */
     font-family: $fuente-principal;
     background: url(../assets/imagenes/background-body.png);
     background-size: cover;
     background-attachment: fixed;
-    /* 120 vh de altura al body para que funcionen las animaciones de  AOS que no entran en el viewport.*/
-    min-height: 120vh;
+    min-height: 100vh;
 }
 
 h2 {

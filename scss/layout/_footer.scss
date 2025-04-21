@@ -3,17 +3,17 @@
 //Estilos del footer para todas las paginas. 
 
 footer {
-    display: flex;
-    flex-direction: column;
-    background-color: $color-primario;
-    text-align: center;
-    font-size: $tamanio-fuente-sm;
-    color: $color-fuente;
-    padding: $padding-sm;
-    margin-top: 2%;
-  }
-  
-  footer a {
+  display: flex;
+  flex-direction: column;
+  background-color: $color-primario;
+  text-align: center;
+  font-size: $tamanio-fuente-sm;
+  color: $color-fuente;
+  padding: $padding-sm;
+  margin-top: 2%;
+
+  a {
     margin: 0;
     justify-content: space-around;
   }
+}

@@ -9,23 +9,28 @@
     margin: 2.5%;
     width: 95%;
 
-    img {
-        
-        @include mixin.borde-estandar;
-        width: 90vw;
-        height: auto;
-        display: block;
-        margin:0 auto;
+    p {
+        font-size: $tamanio-fuente-sm
     }
 
-    p {
-        flex: 1;
-        /* Usar display flex aunque la clase nota-periodistica tenga display flex para que funcione en sus elementos "hijos" */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: justify;
-        margin: 2%;
-        font-size: $tamanio-fuente-sm;
+    div {
+        img {
+
+            @include mixin.borde-estandar;
+            width: 90vw;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        p {
+            flex: 1;
+            /* Usar display flex aunque la clase nota-periodistica tenga display flex para que funcione en sus elementos "hijos" */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: justify;
+            font-size: $tamanio-fuente-sm;
+        }
     }
 }

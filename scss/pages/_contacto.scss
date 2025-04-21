@@ -3,59 +3,56 @@
 @use "sass:color";
 
 .formulario {
+  color: $color-fuente;
+  display: flex;
+  /* flex-direction para acomodarlo en columna */
+  flex-direction: column;
+  max-width: 80%;
+  /* Manera de acomodarlo. Cada valor es una dirección, arriba, derecha, abajo e izquierda */
+  margin: 0 10%;
+  /* atributo gap para separar los distintos label/input */
+  gap: 10px;
+
+  label {
+    font-size: $tamanio-fuente-md;
+  }
+
+  input,
+  select,
+  textarea {
+    margin: 0.2rem;
+    padding: $padding-md;
+    @include mixin.borde-estandar;
+  }
+
+  input[type="submit"] {
+    background-color: $color-primario;
     color: $color-fuente;
-    display: flex;
-    /* flex-direction para acomodarlo en columna */
-    flex-direction: column;
-    max-width: 80%;
-    /* Manera de acomodarlo. Cada valor es una dirección, arriba, derecha, abajo e izquierda */
-    margin: 0 10%;
-    /* atributo gap para separar los distintos label/input */
-    gap: 10px;
-  
-    label {
-      font-size: $tamanio-fuente-sm;
-    }
-  
-    input,
-    select,
-    textarea {
-      margin: 5px;
-      padding: $padding-md;
-      @include mixin.borde-estandar;
-    }
-  
-    input[type="submit"] {
-      background-color: $color-primario;
-      color: $color-fuente;
-      border: none;
-      cursor: pointer;
-      padding: $padding-md;
-      border-radius: $border-radius-normal;
-      /* Para alejarlo del footer */
-      margin-bottom: 7vh;
-  
-      &:hover {
-        /* cambiar de color (más oscuro al pasar el mouse) */
-        background-color: color.adjust(#690202, $lightness: -10%);
-      }
+    border: none;
+    cursor: pointer;
+    padding: $padding-md;
+    border-radius: $border-radius-normal;
+    /* Para alejarlo del footer */
+    margin-bottom: 7vh;
+
+    &:hover {
+      /* cambiar de color (más oscuro al pasar el mouse) */
+      background-color: color.adjust(#690202, $lightness: -5%);
     }
   }
+}
 
-  .texto-con-gif {
-    display: flex;
-    align-items: center;
-    justify-content:center ;
-    h2 {
-      margin-right: 2.5%;
-    }
-    img {
-      height: 10vh;
-      border-radius: 100px ;
-    }
+.texto-con-gif {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-
-
+  h2 {
+    margin-right: 2.5%;
   }
-  
 
+  img {
+    height: 10vh;
+    border-radius: 100px;
+  }
+}

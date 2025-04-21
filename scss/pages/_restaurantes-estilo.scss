@@ -8,54 +8,66 @@
     margin: 2.5%;
     text-align: center;
 
-    /* Los border-radius varian segun el tipo de pantalla. */
-    h2 {
-        color: $color-fuente;
-        padding: 5px;
-        background-color: $color-primario;
-        margin: 0;
-        padding-left: 20px;
-        border-top-right-radius: 10px;
-        border-top-left-radius: 10px;
-    }
-
-    p {
-        font-size: $tamanio-fuente-sm;
-        color: $color-primario;
-        background-color: $color-secundario;
-        padding: $padding-md;
-        border-bottom-right-radius: 10px;
-        border-bottom-left-radius: 10px;
+    .producto-logo {
+        flex: 1;
         width: 100%;
-        height: auto;
-        border: 5px solid $color-primario;
-        text-align: center;
-        display: flex;
+        @include mixin.borde-estandar;
+        background-color: $color-primario;
+        padding-top: 2.5vh;
+
+        div {
+            .logo {
+                height: 20vh;
+                object-fit: cover;
+                width: 70%;
+            }
+        }
+
+        address {
+            /* Se aplica a los iconos de E-mail, telefono y Instagram. */
+            display: flex;
+            justify-content: space-around;
+            padding-top: 5%;
+
+            a {
+                img {
+                    height: 5vh;
+                    /* Con filter: invert cambiamos los iconos negros por blancos con el valor 1 */
+                    filter: invert(1);
+                }
+            }
+        }
     }
-}
 
-.producto-logo {
-    flex: 1;
-    width: 100%;
-    @include mixin.borde-estandar;
-    background-color: $color-primario;
-    padding-top: 2.5vh ;
+    .producto-descripcion {
+        flex: 4;
 
-    img {
-        max-width: 60%;
-        margin: 0 10%;
-        
+        /* Los border-radius varian segun el tipo de pantalla. */
+        h2 {
+            color: $color-fuente;
+            padding: 5px;
+            background-color: $color-primario;
+            margin: 0;
+            padding-left: 20px;
+            border-top-right-radius: 10px;
+            border-top-left-radius: 10px;
+        }
+
+        p {
+            font-size: $tamanio-fuente-sm;
+            line-height: 120%;
+            color: $color-primario;
+            background-color: $color-secundario;
+            padding: $padding-md;
+            border-bottom-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+            width: 100%;
+            height: auto;
+            border: 5px solid $color-primario;
+            text-align: center;
+            display: flex;
+        }
     }
-}
-
-.producto-descripcion {
-    flex: 4;
-}
-
-.logo {
-    height: 20vh;
-    object-fit: cover;
-    width: 90%;
 }
 
 .informacion {
@@ -64,26 +76,4 @@
     justify-items: space-around;
     margin: 2.5%;
     border-top: 10px double $color-primario;
-
-    img {
-        width: 25%;
-        max-height: 30vh;
-        object-fit: cover;
-        @include mixin.borde-estandar;
-    }
-}
-
-address {
-    /* Se aplica a los iconos de E-mail, telefono y Instagram. */
-    display: flex;
-    justify-content: space-around;
-    padding-top: 5%;
-
-    a {
-        img {
-            height: 8vh;
-            /* Con filter: invert cambiamos los iconos negros por blancos con el valor 1 */
-            filter: invert(1);
-        }
-    }
 }
