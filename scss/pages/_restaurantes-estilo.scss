@@ -76,4 +76,25 @@
     justify-items: space-around;
     margin: 2.5%;
     border-top: 10px double $color-primario;
+
+    #carouselExampleCaptions {
+        height: 35vh;
+        width: 80%;
+        overflow: hidden;
+        margin: 0 auto;
+        @include mixin.borde-estandar;
+
+    }
+}
+
+.carousel-inner,
+.carousel-item {
+    height: 100%;
+}
+
+.carousel-item img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    display: block;
 }

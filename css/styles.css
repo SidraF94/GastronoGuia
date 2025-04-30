@@ -132,7 +132,6 @@ footer a {
   /* 2 columnas en mobile */
   grid-template-columns: 1fr 1fr;
   /* Espacio entre elementos */
-  gap: 5px;
   width: 95%;
   margin: 1% auto;
   box-sizing: border-box;
@@ -142,9 +141,11 @@ footer a {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 15vh;
+  min-height: 15vh;
   /* Altura fija para mantener uniformidad */
   overflow: hidden;
+  /* Position relative ayuda a posicionar el overlay dentro del contenedor <a>*/
+  position: relative;
   /* Evita desbordes de imágenes grandes */
 }
 .catalogo a img {
@@ -154,6 +155,31 @@ footer a {
   object-fit: cover;
   border-radius: 5px;
   border: 2.5px solid #690202;
+}
+.catalogo a .overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /* Fondo semitransparente */
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  display: flex;
+  align-items: end;
+  justify-content: start;
+  text-align: right;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  border-radius: 5px;
+  border: 2.5px solid #690202;
+}
+.catalogo a .overlay .texto-overlay {
+  margin: 10%;
+}
+.catalogo a:hover .overlay {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 /* .caja-index Utiliza flexbox para mobile y Grid para Desktop. */
@@ -295,18 +321,15 @@ serian como tarjetas con enlaces a sus respectivas paginas. */
   margin: 2.5%;
   width: 95%;
 }
-.nota-periodistica p {
-  font-size: 1.2rem;
-}
-.nota-periodistica div img {
+.nota-periodistica img {
   border-radius: 5px;
   border: 2.5px solid #690202;
-  width: 90vw;
+  width: 90%;
   height: auto;
   display: block;
   margin: 0 auto;
 }
-.nota-periodistica div p {
+.nota-periodistica p {
   flex: 1;
   /* Usar display flex aunque la clase nota-periodistica tenga display flex para que funcione en sus elementos "hijos" */
   display: flex;
@@ -382,6 +405,26 @@ serian como tarjetas con enlaces a sus respectivas paginas. */
   margin: 2.5%;
   border-top: 10px double #690202;
 }
+.informacion #carouselExampleCaptions {
+  height: 35vh;
+  width: 80%;
+  overflow: hidden;
+  margin: 0 auto;
+  border-radius: 5px;
+  border: 2.5px solid #690202;
+}
+
+.carousel-inner,
+.carousel-item {
+  height: 100%;
+}
+
+.carousel-item img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
 
 .about-us {
   display: flex;
@@ -401,7 +444,7 @@ serian como tarjetas con enlaces a sus respectivas paginas. */
   padding: 10px 15px;
   font-size: 1.2rem;
   /* Fondo animado de boton con linear-gradient. Aplicado automaticamente con @keyframes. */
-  background: linear-gradient(270deg, #f5d776, #d4af37, #f5d776);
+  background: linear-gradient(270deg, #f5d776, #c49704, #f5d776);
   background-size: 200% 200%;
   /* Duración de la animacion y tipo de aceleración.  */
   animation: fondo-dorado 6s ease infinite;
@@ -570,7 +613,7 @@ serian como tarjetas con enlaces a sus respectivas paginas. */
     display: none;
   }
 }
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+@media (min-width: 768px) and (max-width: 1200px) and (orientation: portrait) {
   .navbar h1 {
     font-size: 3.5rem;
   }
@@ -634,11 +677,9 @@ serian como tarjetas con enlaces a sus respectivas paginas. */
   .nota-periodistica p {
     font-size: 1.5rem;
   }
-  .nota-periodistica div p {
-    font-size: 1.5rem;
-  }
-  .nota-periodistica div img {
+  .nota-periodistica img {
     width: 80vw;
+    margin: 2vh 0;
   }
   .producto .producto-logo {
     width: 70%;
@@ -652,20 +693,24 @@ serian como tarjetas con enlaces a sus respectivas paginas. */
   }
 }
 /* Clase carousel de Bootstrap. */
-.carousel {
-  width: 100%;
-  max-height: 35vh;
+#carouselExampleCaptions {
+  height: 35vh;
+  width: 80%;
   overflow: hidden;
+  border-radius: 5px;
+  border: 2.5px solid #690202;
 }
 
 .carousel-inner,
-.carousel-item,
-.carousel-item img {
-  width: 100%;
+.carousel-item {
+  height: 100%;
 }
 
 .carousel-item img {
+  height: 100%;
+  width: 100%;
   object-fit: cover;
+  display: block;
 }
 
 /* Estilos para tablet con orientación  */
@@ -837,22 +882,16 @@ serian como tarjetas con enlaces a sus respectivas paginas. */
     height: 30vh;
     margin: 0 auto;
   }
-  /* Clase carousel de Bootstrap. */
-  .carousel {
+  .informacion #carouselExampleCaptions {
     display: block;
-    width: 100%;
     height: 30vh;
-    overflow: hidden;
-  }
-  .carousel-inner,
-  .carousel-item,
-  .carousel-item img {
     width: 100%;
-    height: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+    border-radius: 5px;
+    border: 2.5px solid #690202;
   }
-  .carousel-item img {
-    object-fit: cover;
-  }
+  /* Clase carousel de Bootstrap. */
 }
 @media (min-width: 1200px) {
   main {
@@ -923,8 +962,11 @@ serian como tarjetas con enlaces a sus respectivas paginas. */
     padding: 2%;
     border-top: 5px solid #690202;
   }
+  .caja-index .noticia .contenido-noticia {
+    overflow: auto;
+  }
   .caja-index .noticia .contenido-noticia h3 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
   .caja-index .noticia .contenido-noticia p {
     display: block;
@@ -965,6 +1007,8 @@ serian como tarjetas con enlaces a sus respectivas paginas. */
   }
   .preview {
     display: flex;
+    height: 20vh;
+    overflow: auto;
   }
   .preview .preview-caja {
     flex-direction: row;
@@ -978,10 +1022,10 @@ serian como tarjetas con enlaces a sus respectivas paginas. */
     flex: 2;
   }
   .preview .preview-caja .preview-texto .preview-titulo {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
   .preview .preview-caja .preview-texto .preview-descripcion {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     line-height: 120%;
   }
   .nota-periodistica {
@@ -992,36 +1036,18 @@ serian como tarjetas con enlaces a sus respectivas paginas. */
   }
   .nota-periodistica p {
     font-size: 1.8rem;
+    margin: 2%;
   }
-  .nota-periodistica div {
-    justify-content: center;
-    align-items: center;
-    margin: auto 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    margin: 0 2.5%;
-    /* "& > *" Aplica estilos a todos los hijos de este mixin. Va a tener un margen de 5% entre los dos costados
-    por eso sus hijos deberian ocupar el 95% del contenedor. */
-  }
-  .nota-periodistica div > * {
-    max-width: 95%;
-  }
-  .nota-periodistica div p {
-    font-size: 1.8rem;
-  }
-  .nota-periodistica div img {
-    margin: 0;
-    height: auto;
-    width: 95%;
-  }
-  .nota-periodistica p {
-    font-size: 1.8rem;
-    margin: 2% 5%;
+  .nota-periodistica img {
+    margin: 0 2%;
+    height: 50vh;
+    width: 40%;
+    /* Float hace que el texto fluya alrededor de la imagen.*/
+    float: left;
   }
   .producto {
-    margin: 0 auto;
-    height: 50vh;
+    margin: 0 auto 5% auto;
+    height: 40vh;
     width: 90%;
   }
   .producto .producto-logo {
@@ -1034,7 +1060,7 @@ serian como tarjetas con enlaces a sus respectivas paginas. */
     width: 70%;
   }
   .producto .producto-logo address a img {
-    height: 5vh;
+    height: 8vh;
   }
   .producto .producto-descripcion h2 {
     border-top-left-radius: 0px;
@@ -1052,23 +1078,19 @@ serian como tarjetas con enlaces a sus respectivas paginas. */
   }
   .informacion iframe {
     height: 40vh;
-    width: 95%;
+    width: 100%;
+    margin: 2%;
+  }
+  .informacion #carouselExampleCaptions {
+    margin-top: 2%;
+    height: 40vh;
+    display: block;
   }
   /* Clase carousel de Bootstrap. */
-  .carousel {
-    display: block;
-    width: 100%;
-    height: auto;
-    overflow: hidden;
-  }
-  .carousel-inner,
-  .carousel-item,
-  .carousel-item img {
-    width: 95%;
-    height: 99.99%;
-  }
-  .carousel-item img {
-    object-fit: cover;
+  .carousel-caption h5 {
+    padding: 2%;
+    background-color: black;
+    border-radius: 10px;
   }
   .seccion-dividida {
     display: grid;

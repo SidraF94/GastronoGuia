@@ -75,8 +75,10 @@
       border-top: 5px solid $color-primario;
 
       .contenido-noticia {
+        overflow: auto;
+
         h3 {
-          font-size: $tamanio-fuente-lg;
+          font-size: $tamanio-fuente-md;
         }
 
         p {
@@ -119,9 +121,12 @@
 
   .preview {
     display: flex;
+    height: 20vh;
+    overflow: auto;
 
     .preview-caja {
       flex-direction: row;
+
 
       .preview-imagen {
         flex: 1;
@@ -133,11 +138,11 @@
         flex: 2;
 
         .preview-titulo {
-          font-size: $tamanio-fuente-lg;
+          font-size: $tamanio-fuente-md;
         }
 
         .preview-descripcion {
-          font-size: $tamanio-fuente-md;
+          font-size: $tamanio-fuente-sm;
           line-height: 120%;
         }
       }
@@ -150,40 +155,26 @@
     display: block;
     justify-content: center;
 
-    p {
-      font-size: $tamanio-fuente-lg;
-    }
 
-    div {
-      justify-content: center;
-      align-items: center;
-      margin: auto 0;
-      @include mixin.grid-dos-columnas;
-
-      p {
-        font-size: $tamanio-fuente-lg;
-      }
-
-      img {
-        margin: 0;
-        height: auto;
-        width: 95%;
-      }
-    }
 
     p {
       font-size: $tamanio-fuente-lg;
-      margin: 2% 5%;
+      margin: 2%;
+    }
+
+    img {
+      margin: 0 2%;
+      height: 50vh;
+      width: 40%;
+      /* Float hace que el texto fluya alrededor de la imagen.*/
+      float: left;
     }
   }
 
-
-
   .producto {
-    margin: 0 auto;
-    height: 50vh;
+    margin: 0 auto 5% auto;
+    height: 40vh;
     width: 90%;
-
 
     .producto-logo {
       padding: 0;
@@ -200,7 +191,7 @@
       address {
         a {
           img {
-            height: 5vh;
+            height: 8vh;
           }
         }
       }
@@ -228,28 +219,23 @@
 
     iframe {
       height: 40vh;
-      width: 95%;
+      width: 100%;
+      margin: 2%;
+    }
+
+    #carouselExampleCaptions {
+      margin-top: 2%;
+      height: 40vh;
+      display: block;
     }
   }
 
-
   /* Clase carousel de Bootstrap. */
-  .carousel {
-    display: block;
-    width: 100%;
-    height: auto;
-    overflow: hidden;
-  }
 
-  .carousel-inner,
-  .carousel-item,
-  .carousel-item img {
-    width: 95%;
-    height: 99.99%;
-  }
-
-  .carousel-item img {
-    object-fit: cover;
+  .carousel-caption h5 {
+    padding: 2%;
+    background-color: black;
+    border-radius: 10px;
   }
 
   .seccion-dividida {
