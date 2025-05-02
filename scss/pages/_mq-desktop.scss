@@ -155,8 +155,6 @@
     display: block;
     justify-content: center;
 
-
-
     p {
       font-size: $tamanio-fuente-lg;
       margin: 2%;
@@ -167,7 +165,7 @@
       height: 50vh;
       width: 40%;
       /* Float hace que el texto fluya alrededor de la imagen.*/
-      float: left;
+      float: inline-start;
     }
   }
 

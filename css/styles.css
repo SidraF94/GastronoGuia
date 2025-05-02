@@ -151,7 +151,7 @@ footer a {
 .catalogo a img {
   width: 100%;
   height: 100%;
-  /* Recorta imágenes manteniendo la proporción. */
+  /* Cover recorta imágenes manteniendo la proporción. */
   object-fit: cover;
   border-radius: 5px;
   border: 2.5px solid #690202;
@@ -179,7 +179,6 @@ footer a {
 }
 .catalogo a:hover .overlay {
   opacity: 1;
-  pointer-events: auto;
 }
 
 /* .caja-index Utiliza flexbox para mobile y Grid para Desktop. */
@@ -336,6 +335,7 @@ serian como tarjetas con enlaces a sus respectivas paginas. */
   align-items: center;
   justify-content: center;
   text-align: justify;
+  margin: 2.5%;
   font-size: 1.2rem;
 }
 
@@ -713,6 +713,12 @@ serian como tarjetas con enlaces a sus respectivas paginas. */
   display: block;
 }
 
+.carousel-caption h5 {
+  padding: 2%;
+  background-color: black;
+  border-radius: 10px;
+}
+
 /* Estilos para tablet con orientación  */
 @media (min-width: 768px) and (max-width: 1200px) and (orientation: landscape) {
   main {
@@ -1043,7 +1049,7 @@ serian como tarjetas con enlaces a sus respectivas paginas. */
     height: 50vh;
     width: 40%;
     /* Float hace que el texto fluya alrededor de la imagen.*/
-    float: left;
+    float: inline-start;
   }
   .producto {
     margin: 0 auto 5% auto;
